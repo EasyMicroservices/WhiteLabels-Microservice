@@ -29,7 +29,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
 
         public virtual IDatabase GetDatabase()
         {
-            return new EntityFrameworkCoreDatabaseProvider(new StorageContext(new DatabaseBuilder()));
+            return new EntityFrameworkCoreDatabaseProvider(new WhiteLabelContext(new DatabaseBuilder()));
         }
 
         public virtual IMapperProvider GetMapper()

@@ -41,7 +41,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
             app.UseAuthorization();
             app.MapControllers();
 
-            var context = new StorageContext(new DatabaseBuilder());
+            var context = new WhiteLabelContext(new DatabaseBuilder());
             await context.Database.MigrateAsync();
             await context.DisposeAsync();
 
@@ -54,7 +54,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
 
         static void CreateDatabase()
         {
-            using (var context = new StorageContext(new DatabaseBuilder()))
+            using (var context = new WhiteLabelContext(new DatabaseBuilder()))
             {
                 if (context.Database.EnsureCreated())
                 {
