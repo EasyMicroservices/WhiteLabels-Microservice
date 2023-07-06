@@ -12,8 +12,8 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
     {
         public void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseInMemoryDatabase("Storage database");
-            optionsBuilder.UseSqlServer("Server=.;Database=Storage;User ID=test;Password=test1234;Trusted_Connection=True;TrustServerCertificate=True");
+            //optionsBuilder.UseInMemoryDatabase("WhiteLabels database");
+            optionsBuilder.UseSqlServer("Server=.;Database=WhiteLabels;User ID=test;Password=test1234;Trusted_Connection=True;TrustServerCertificate=True");
         }
     }
 }

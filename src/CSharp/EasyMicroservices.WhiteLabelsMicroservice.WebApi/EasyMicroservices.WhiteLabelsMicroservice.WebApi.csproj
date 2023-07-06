@@ -17,9 +17,5 @@
   <ItemGroup>
     <ProjectReference Include="..\EasyMicroservices.WhiteLabelsMicroservice.StartUp\EasyMicroservices.WhiteLabelsMicroservice.StartUp.csproj" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
 
 </Project>
