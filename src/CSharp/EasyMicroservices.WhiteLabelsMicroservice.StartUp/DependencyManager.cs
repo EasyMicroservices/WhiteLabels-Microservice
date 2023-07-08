@@ -6,6 +6,8 @@ using EasyMicroservices.Database.Interfaces;
 using EasyMicroservices.Mapper.CompileTimeMapper.Interfaces;
 using EasyMicroservices.Mapper.CompileTimeMapper.Providers;
 using EasyMicroservices.Mapper.Interfaces;
+using EasyMicroservices.Mapper.SerializerMapper.Providers;
+using EasyMicroservices.Serialization.Newtonsoft.Json.Providers;
 using EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts;
 using EasyMicroservices.WhiteLabelsMicroservice.Interfaces;
 using System;
@@ -34,7 +36,11 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
 
         public virtual IMapperProvider GetMapper()
         {
-            var mapper = new CompileTimeMapperProvider();
+            var mapper = new CompileTimeMapperProvider(new SerializerMapperProvider(new NewtonsoftJsonProvider(new Newtonsoft.Json.JsonSerializerSettings
+            {
+                ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize,
+                PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All
+            })));
             foreach (var type in typeof(IDependencyManager).Assembly.GetTypes())
             {
                 if (typeof(IMapper).IsAssignableFrom(type))

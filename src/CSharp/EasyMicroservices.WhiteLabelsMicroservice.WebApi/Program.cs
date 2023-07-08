@@ -1,5 +1,11 @@
+using EasyMicroservices.Mapper.CompileTimeMapper.Providers;
+using EasyMicroservices.Mapper.SerializerMapper.Providers;
+using EasyMicroservices.Serialization.Newtonsoft.Json.Providers;
+using EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common;
+using EasyMicroservices.WhiteLabelsMicroservice.Contracts.Responses;
 using EasyMicroservices.WhiteLabelsMicroservice.Database;
 using EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts;
+using EasyMicroservices.WhiteLabelsMicroservice.Database.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.OpenApi.Any;
@@ -26,7 +32,8 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
                 options.SchemaFilter<XEnumNamesSchemaFilter>();
             });
 
-            //builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<FormEntity, CreateFormRequestContract, FormContract, FormContract>());
+            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ContextTableEntity, MicroserviceContextTableContract, MicroserviceContextTableContract, MicroserviceContextTableContract>());
+            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<WhiteLabelEntity, WhiteLabelContract, WhiteLabelContract, WhiteLabelContract>());
 
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddScoped<IDatabaseBuilder>(serviceProvider => new DatabaseBuilder());
@@ -45,8 +52,9 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
             await context.Database.MigrateAsync();
             await context.DisposeAsync();
 
+            //var items = context.MicroserviceContextTables.ToList();
             //CreateDatabase();
-
+            
             StartUp startUp = new StartUp();
             await startUp.Run(new DependencyManager());
             app.Run();

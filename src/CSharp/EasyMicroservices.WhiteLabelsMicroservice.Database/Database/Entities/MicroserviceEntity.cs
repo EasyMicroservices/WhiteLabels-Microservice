@@ -4,12 +4,10 @@ using System.Collections.Generic;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Entities
 {
-    public class WhiteLabelEntity : WhiteLabelSchema, IIdSchema<long>
+    public class MicroserviceEntity : MicroserviceSchema, IIdSchema<long>
     {
         public long Id { get; set; }
-
-        public long? ParentId { get; set; }
-        public WhiteLabelEntity Parent { get; set; }
-        public ICollection<WhiteLabelEntity> Children { get; set; }
+        public ICollection<MicroserviceContextTableEntity> MicroserviceContextTables { get; set; }
     }
 }
+
