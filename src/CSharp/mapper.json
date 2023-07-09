@@ -1,0 +1,73 @@
+﻿{
+	"Environments": [
+		{
+			"Name": "WhiteLablesMicroservice",
+			"GenerationPath": "ExecutionPath\\EasyMicroservices.WhiteLabelsMicroservice.Logics\\Mappers",
+			"BuildPath": "ExecutionPath\\EasyMicroservices.WhiteLabelsMicroservice.WebApi\\bin\\Debug\\net7.0",
+			"NameSpaces": [
+				"EasyMicroservices.Mapper.Interfaces",
+				"EasyMicroservices.Mapper.CompileTimeMapper.Interfaces",
+				"System.Linq"
+			],
+			"Groups": [
+				{
+					"DisplayName": "WhiteLabelEntity_WhiteLabelContract",
+					"MapFrom": {
+						"Name": "WhiteLabelEntity",
+						"Namespace": "EasyMicroservices.WhiteLabelsMicroservice.Database.Entities",
+						"AssebmlyFileName": "EasyMicroservices.WhiteLabelsMicroservice.Database.dll"
+					},
+					"MapTo": {
+						"Name": "WhiteLabelContract",
+						"Namespace": "EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common",
+						"AssebmlyFileName": "EasyMicroservices.WhiteLabelsMicroservice.Domain.dll"
+					},
+					"SkippedProperties": [
+						{
+							"Name": "Children"
+						},
+						{
+							"Name": "Parent"
+						}
+					],
+					"CustomProperties": []
+				},
+				{
+					"DisplayName": "MicroserviceContextTableEntity_MicroserviceContextTableContract",
+					"MapFrom": {
+						"Name": "MicroserviceContextTableEntity",
+						"Namespace": "EasyMicroservices.WhiteLabelsMicroservice.Database.Entities",
+						"AssebmlyFileName": "EasyMicroservices.WhiteLabelsMicroservice.Database.dll"
+					},
+					"MapTo": {
+						"Name": "MicroserviceContextTableContract",
+						"Namespace": "EasyMicroservices.WhiteLabelsMicroservice.Contracts.Responses",
+						"AssebmlyFileName": "EasyMicroservices.WhiteLabelsMicroservice.Domain.dll"
+					},
+					"SkippedProperties": [
+						{
+							"Name": "ContextTable"
+						},
+						{
+							"Name": "Microservice"
+						}
+					],
+					"CustomProperties": [
+						{
+							"FromName": "ContextName",
+							"ToName": "$fromObject.ContextTable?.ContextName"
+						},
+						{
+							"FromName": "MicroserviceName",
+							"ToName": "$fromObject.Microservice?.Name"
+						},
+						{
+							"FromName": "TableName",
+							"ToName": "$fromObject.ContextTable?.TableName"
+						}
+					]
+				}
+			]
+		}
+	]
+}
