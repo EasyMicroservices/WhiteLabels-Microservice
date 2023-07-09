@@ -5,7 +5,7 @@ using EasyMicroservices.WhiteLabelsMicroservice.Database.Entities;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi.Controllers
 {
-    public class WhiteLabelController : SimpleQueryServiceController<WhiteLabelEntity, long, WhiteLabelContract, WhiteLabelContract, WhiteLabelContract>
+    public class WhiteLabelController : SimpleQueryServiceController<WhiteLabelEntity, WhiteLabelContract, WhiteLabelContract, WhiteLabelContract, long>
     {
         public WhiteLabelController(IContractLogic<WhiteLabelEntity, WhiteLabelContract, WhiteLabelContract, WhiteLabelContract, long> contractReadable) : base(contractReadable)
         {

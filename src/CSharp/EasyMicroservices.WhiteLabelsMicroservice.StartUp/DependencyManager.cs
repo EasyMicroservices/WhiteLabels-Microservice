@@ -1,6 +1,7 @@
 ﻿using EasyMicroservices.Configuration.Interfaces;
 using EasyMicroservices.Cores.Database.Interfaces;
 using EasyMicroservices.Cores.Database.Logics;
+using EasyMicroservices.Cores.Database.Managers;
 using EasyMicroservices.Database.EntityFrameworkCore.Providers;
 using EasyMicroservices.Database.Interfaces;
 using EasyMicroservices.Mapper.CompileTimeMapper.Interfaces;
@@ -17,6 +18,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
 {
     public class DependencyManager : IDependencyManager
     {
+        public string StartUniqueIdentity { get; set; } = "1-1";
         public virtual IConfigProvider GetConfigProvider()
         {
             throw new NotImplementedException();
@@ -26,7 +28,22 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
             where TEntity : class, IIdSchema<long>
             where TResponseContract : class
         {
-            return new LongIdMappedDatabaseLogicBase<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract>(GetDatabase().GetReadableOf<TEntity>(), GetDatabase().GetWritableOf<TEntity>(), GetMapper());
+            return new LongIdMappedDatabaseLogicBase<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract>(
+                GetDatabase().GetReadableOf<TEntity>(),
+                GetDatabase().GetWritableOf<TEntity>(),
+                GetMapper(),
+                new DefaultUniqueIdentityManager(StartUniqueIdentity));
+        }
+
+        public virtual IContractLogic<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract, TResponseContract> GetManyToManyContractLogic<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract>()
+            where TEntity : class
+            where TResponseContract : class
+        {
+            return new DatabaseMappedLogicBase<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract>(
+                GetDatabase().GetReadableOf<TEntity>(),
+                GetDatabase().GetWritableOf<TEntity>(),
+                GetMapper(),
+                new DefaultUniqueIdentityManager(StartUniqueIdentity));
         }
 
         public virtual IDatabase GetDatabase()
