@@ -579,15 +579,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<MicroserviceContractMessageContract> GetById2Async(long? id)
+        public virtual System.Threading.Tasks.Task<MicroserviceContractMessageContract> GetByIdAsync(long? id)
         {
-            return GetById2Async(id, System.Threading.CancellationToken.None);
+            return GetByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<MicroserviceContractMessageContract> GetById2Async(long? id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<MicroserviceContractMessageContract> GetByIdAsync(long? id, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Microservice/GetById?");
@@ -658,15 +658,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<Int64MessageContract> Add2Async(MicroserviceContract body)
+        public virtual System.Threading.Tasks.Task<Int64MessageContract> AddAsync(MicroserviceContract body)
         {
-            return Add2Async(body, System.Threading.CancellationToken.None);
+            return AddAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<Int64MessageContract> Add2Async(MicroserviceContract body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<Int64MessageContract> AddAsync(MicroserviceContract body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Microservice/Add");
@@ -736,15 +736,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<MicroserviceContractMessageContract> Update2Async(MicroserviceContract body)
+        public virtual System.Threading.Tasks.Task<MicroserviceContractMessageContract> UpdateAsync(MicroserviceContract body)
         {
-            return Update2Async(body, System.Threading.CancellationToken.None);
+            return UpdateAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<MicroserviceContractMessageContract> Update2Async(MicroserviceContract body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<MicroserviceContractMessageContract> UpdateAsync(MicroserviceContract body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Microservice/Update");
@@ -814,15 +814,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<MicroserviceContractMessageContract> HardDeleteById2Async(long? id)
+        public virtual System.Threading.Tasks.Task<MicroserviceContractMessageContract> HardDeleteByIdAsync(long? id)
         {
-            return HardDeleteById2Async(id, System.Threading.CancellationToken.None);
+            return HardDeleteByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<MicroserviceContractMessageContract> HardDeleteById2Async(long? id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<MicroserviceContractMessageContract> HardDeleteByIdAsync(long? id, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Microservice/HardDeleteById?");
@@ -894,15 +894,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<MicroserviceContractListMessageContract> GetAll2Async()
+        public virtual System.Threading.Tasks.Task<MicroserviceContractListMessageContract> GetAllAsync()
         {
-            return GetAll2Async(System.Threading.CancellationToken.None);
+            return GetAllAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<MicroserviceContractListMessageContract> GetAll2Async(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<MicroserviceContractListMessageContract> GetAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Microservice/GetAll");
@@ -1106,15 +1106,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<WhiteLabelContractMessageContract> GetById3Async(long? id)
+        public virtual System.Threading.Tasks.Task<WhiteLabelContractMessageContract> GetByIdAsync(long? id)
         {
-            return GetById3Async(id, System.Threading.CancellationToken.None);
+            return GetByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<WhiteLabelContractMessageContract> GetById3Async(long? id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<WhiteLabelContractMessageContract> GetByIdAsync(long? id, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/GetById?");
@@ -1185,15 +1185,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<Int64MessageContract> Add3Async(WhiteLabelContract body)
+        public virtual System.Threading.Tasks.Task<Int64MessageContract> AddAsync(WhiteLabelContract body)
         {
-            return Add3Async(body, System.Threading.CancellationToken.None);
+            return AddAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<Int64MessageContract> Add3Async(WhiteLabelContract body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<Int64MessageContract> AddAsync(WhiteLabelContract body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/Add");
@@ -1263,15 +1263,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<WhiteLabelContractMessageContract> Update3Async(WhiteLabelContract body)
+        public virtual System.Threading.Tasks.Task<WhiteLabelContractMessageContract> UpdateAsync(WhiteLabelContract body)
         {
-            return Update3Async(body, System.Threading.CancellationToken.None);
+            return UpdateAsync(body, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<WhiteLabelContractMessageContract> Update3Async(WhiteLabelContract body, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<WhiteLabelContractMessageContract> UpdateAsync(WhiteLabelContract body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/Update");
@@ -1341,15 +1341,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<WhiteLabelContractMessageContract> HardDeleteById3Async(long? id)
+        public virtual System.Threading.Tasks.Task<WhiteLabelContractMessageContract> HardDeleteByIdAsync(long? id)
         {
-            return HardDeleteById3Async(id, System.Threading.CancellationToken.None);
+            return HardDeleteByIdAsync(id, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<WhiteLabelContractMessageContract> HardDeleteById3Async(long? id, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<WhiteLabelContractMessageContract> HardDeleteByIdAsync(long? id, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/HardDeleteById?");
@@ -1421,15 +1421,15 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<WhiteLabelContractListMessageContract> GetAll3Async()
+        public virtual System.Threading.Tasks.Task<WhiteLabelContractListMessageContract> GetAllAsync()
         {
-            return GetAll3Async(System.Threading.CancellationToken.None);
+            return GetAllAsync(System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<WhiteLabelContractListMessageContract> GetAll3Async(System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<WhiteLabelContractListMessageContract> GetAllAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/GetAll");
