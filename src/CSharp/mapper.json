@@ -87,6 +87,27 @@
 					"CustomProperties": [
 						
 					]
+				},
+				{
+					"DisplayName": "ContextTableEntity_ContextTableContract",
+					"MapFrom": {
+						"Name": "ContextTableEntity",
+						"Namespace": "EasyMicroservices.WhiteLabelsMicroservice.Database.Entities",
+						"AssebmlyFileName": "EasyMicroservices.WhiteLabelsMicroservice.Database.dll"
+					},
+					"MapTo": {
+						"Name": "ContextTableContract",
+						"Namespace": "EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common",
+						"AssebmlyFileName": "EasyMicroservices.WhiteLabelsMicroservice.Domain.dll"
+					},
+					"SkippedProperties": [
+						{
+							"Name": "MicroserviceContextTables"
+						}
+					],
+					"CustomProperties": [
+
+					]
 				}
 			]
 		}

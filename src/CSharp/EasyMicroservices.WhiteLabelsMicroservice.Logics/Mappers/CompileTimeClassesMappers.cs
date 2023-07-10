@@ -5,6 +5,82 @@ using System.Linq;
 
 namespace CompileTimeMapper
 {
+    public class ContextTableEntity_ContextTableContract_Mapper : IMapper
+    {
+        readonly IMapperProvider _mapper;
+        public ContextTableEntity_ContextTableContract_Mapper(IMapperProvider mapper)
+        {
+            _mapper = mapper;
+        }
+
+        public global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity Map(global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.ContextTableContract fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            var mapped = new global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity()
+            {
+                ContextName = fromObject.ContextName,
+                Id = fromObject.Id,
+                TableName = fromObject.TableName,
+            };
+            return mapped;
+        }
+
+        public global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.ContextTableContract Map(global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            var mapped = new global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.ContextTableContract()
+            {
+                ContextName = fromObject.ContextName,
+                Id = fromObject.Id,
+                TableName = fromObject.TableName,
+            };
+            return mapped;
+        }
+
+        public async Task<global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity> MapAsync(global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.ContextTableContract fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            var mapped = new global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity()
+            {
+                ContextName = fromObject.ContextName,
+                Id = fromObject.Id,
+                TableName = fromObject.TableName,
+            };
+            return mapped;
+        }
+
+        public async Task<global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.ContextTableContract> MapAsync(global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            var mapped = new global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.ContextTableContract()
+            {
+                ContextName = fromObject.ContextName,
+                Id = fromObject.Id,
+                TableName = fromObject.TableName,
+            };
+            return mapped;
+        }
+        public object MapObject(object fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            if (fromObject.GetType() == typeof(EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity))
+                return Map((EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity)fromObject, uniqueRecordId, language, parameters);
+            return Map((EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.ContextTableContract)fromObject, uniqueRecordId, language, parameters);
+        }
+        public async Task<object> MapObjectAsync(object fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            if (fromObject.GetType() == typeof(EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity))
+                return await MapAsync((EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.ContextTableEntity)fromObject, uniqueRecordId, language, parameters);
+            return await MapAsync((EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.ContextTableContract)fromObject, uniqueRecordId, language, parameters);
+        }
+    }
     public class MicroserviceContextTableEntity_MicroserviceContextTableContract_Mapper : IMapper
     {
         readonly IMapperProvider _mapper;

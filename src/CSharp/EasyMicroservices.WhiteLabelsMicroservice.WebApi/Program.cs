@@ -35,7 +35,8 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
             builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetManyToManyContractLogic<MicroserviceContextTableEntity, MicroserviceContextTableContract, MicroserviceContextTableContract, MicroserviceContextTableContract>());
             builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<WhiteLabelEntity, WhiteLabelContract, WhiteLabelContract, WhiteLabelContract>());
             builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<MicroserviceEntity, MicroserviceContract, MicroserviceContract, MicroserviceContract>());
-
+            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ContextTableEntity, ContextTableContract, ContextTableContract, ContextTableContract>());
+            
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddScoped<IDatabaseBuilder>(serviceProvider => new DatabaseBuilder());
 
