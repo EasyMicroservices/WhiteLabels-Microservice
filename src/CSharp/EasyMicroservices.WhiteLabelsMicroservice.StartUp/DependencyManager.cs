@@ -18,7 +18,6 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
 {
     public class DependencyManager : IDependencyManager
     {
-        public string StartUniqueIdentity { get; set; } = "1-1";
         public virtual IConfigProvider GetConfigProvider()
         {
             throw new NotImplementedException();
@@ -32,7 +31,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
                 GetDatabase().GetReadableOf<TEntity>(),
                 GetDatabase().GetWritableOf<TEntity>(),
                 GetMapper(),
-                new DefaultUniqueIdentityManager(StartUniqueIdentity));
+                new DefaultUniqueIdentityManager());
         }
 
         public virtual IContractLogic<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract, TResponseContract> GetManyToManyContractLogic<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract>()
@@ -43,7 +42,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
                 GetDatabase().GetReadableOf<TEntity>(),
                 GetDatabase().GetWritableOf<TEntity>(),
                 GetMapper(),
-                new DefaultUniqueIdentityManager(StartUniqueIdentity));
+                new DefaultUniqueIdentityManager());
         }
 
         public virtual IDatabase GetDatabase()
