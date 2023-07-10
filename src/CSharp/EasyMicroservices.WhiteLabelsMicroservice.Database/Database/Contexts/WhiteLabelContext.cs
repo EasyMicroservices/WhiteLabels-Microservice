@@ -1,6 +1,5 @@
 ﻿using EasyMicroservices.WhiteLabelsMicroservice.Database.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
 {
@@ -40,6 +39,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
             modelBuilder.Entity<ContextTableEntity>(model =>
             {
                 model.HasKey(x => x.Id);
+                model.HasIndex(x => new { x.ContextName, x.TableName }).IsUnique();
 
                 model.HasIndex(x => x.TableName);
                 model.HasIndex(x => x.ContextName);
@@ -59,14 +59,14 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
                 model.HasOne(x => x.Microservice)
                 .WithMany(x => x.MicroserviceContextTables)
                 .HasForeignKey(x => x.MicroserviceId);
-                
+
                 model.HasOne(x => x.ContextTable)
                 .WithMany(x => x.MicroserviceContextTables)
                 .HasForeignKey(x => x.ContextTableId);
             });
 
             modelBuilder.Entity<MicroserviceEntity>().HasData(
-                new  MicroserviceEntity()
+                new MicroserviceEntity()
                 {
                     Id = 1,
                     Name = "TemplateGenerator",
@@ -127,7 +127,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
                 {
                     ContextTableId = 1,
                     MicroserviceId = 1,
-                }, 
+                },
                 new MicroserviceContextTableEntity()
                 {
                     ContextTableId = 2,

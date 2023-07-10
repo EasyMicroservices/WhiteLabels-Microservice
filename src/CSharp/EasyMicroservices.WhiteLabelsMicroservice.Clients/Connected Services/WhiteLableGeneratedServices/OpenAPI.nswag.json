@@ -11,42 +11,33 @@
           "ContextTable"
         ],
         "operationId": "GetById",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
-              }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               }
             }
@@ -64,17 +55,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+                "$ref": "#/components/schemas/ContextTableContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+                "$ref": "#/components/schemas/ContextTableContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+                "$ref": "#/components/schemas/ContextTableContract"
               }
             }
           }
@@ -85,17 +76,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/Int64MessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/Int64MessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/Int64MessageContract"
                 }
               }
             }
@@ -113,17 +104,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+                "$ref": "#/components/schemas/ContextTableContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+                "$ref": "#/components/schemas/ContextTableContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+                "$ref": "#/components/schemas/ContextTableContract"
               }
             }
           }
@@ -134,17 +125,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               }
             }
@@ -158,42 +149,33 @@
           "ContextTable"
         ],
         "operationId": "HardDeleteById",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContract"
-              }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
                 }
               }
             }
@@ -213,17 +195,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
                 }
               }
             }
@@ -439,12 +421,238 @@
         }
       }
     },
+    "/api/MicroserviceContextTable/GetById": {
+      "get": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "GetById3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/Add": {
+      "post": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "Add3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/Update": {
+      "post": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "Update3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/HardDeleteById": {
+      "post": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "HardDeleteById3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/GetAll": {
+      "get": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "GetAll3",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/WhiteLabel/GetById": {
       "get": {
         "tags": [
           "WhiteLabel"
         ],
-        "operationId": "GetById3",
+        "operationId": "GetById4",
         "parameters": [
           {
             "name": "id",
@@ -484,7 +692,7 @@
         "tags": [
           "WhiteLabel"
         ],
-        "operationId": "Add3",
+        "operationId": "Add4",
         "requestBody": {
           "content": {
             "application/json": {
@@ -533,7 +741,7 @@
         "tags": [
           "WhiteLabel"
         ],
-        "operationId": "Update3",
+        "operationId": "Update4",
         "requestBody": {
           "content": {
             "application/json": {
@@ -582,7 +790,7 @@
         "tags": [
           "WhiteLabel"
         ],
-        "operationId": "HardDeleteById3",
+        "operationId": "HardDeleteById4",
         "parameters": [
           {
             "name": "id",
@@ -622,7 +830,7 @@
         "tags": [
           "WhiteLabel"
         ],
-        "operationId": "GetAll3",
+        "operationId": "GetAll4",
         "responses": {
           "200": {
             "description": "Success",
@@ -650,6 +858,57 @@
   },
   "components": {
     "schemas": {
+      "ContextTableContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tableName": {
+            "type": "string",
+            "nullable": true
+          },
+          "contextName": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ContextTableContractListMessageContract": {
+        "title": "MessageContract<List`1>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "result": {
+            "title": "List<ContextTableContract>",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ContextTableContract"
+            }
+          }
+        }
+      },
+      "ContextTableContractMessageContract": {
+        "title": "MessageContract<ContextTableContract>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "result": {
+            "$ref": "#/components/schemas/ContextTableContract"
+          }
+        }
+      },
       "ErrorContract": {
         "type": "object",
         "additionalProperties": false,
