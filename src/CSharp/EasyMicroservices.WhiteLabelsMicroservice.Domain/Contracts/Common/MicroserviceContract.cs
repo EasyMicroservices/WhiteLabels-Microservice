@@ -1,7 +1,8 @@
-﻿namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Schemas
+﻿namespace EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common
 {
-    public class MicroserviceSchema
+    public class MicroserviceContract
     {
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int InstanceIndex { get; set; }

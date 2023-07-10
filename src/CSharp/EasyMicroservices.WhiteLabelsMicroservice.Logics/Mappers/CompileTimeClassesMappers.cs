@@ -83,6 +83,90 @@ namespace CompileTimeMapper
             return await MapAsync((EasyMicroservices.WhiteLabelsMicroservice.Contracts.Responses.MicroserviceContextTableContract)fromObject, uniqueRecordId, language, parameters);
         }
     }
+    public class MicroserviceEntity_MicroserviceContract_Mapper : IMapper
+    {
+        readonly IMapperProvider _mapper;
+        public MicroserviceEntity_MicroserviceContract_Mapper(IMapperProvider mapper)
+        {
+            _mapper = mapper;
+        }
+
+        public global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity Map(global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.MicroserviceContract fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            var mapped = new global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity()
+            {
+                Description = fromObject.Description,
+                Id = fromObject.Id,
+                InstanceIndex = fromObject.InstanceIndex,
+                Name = fromObject.Name,
+                ServerDestinationAddress = fromObject.ServerDestinationAddress,
+            };
+            return mapped;
+        }
+
+        public global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.MicroserviceContract Map(global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            var mapped = new global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.MicroserviceContract()
+            {
+                Description = fromObject.Description,
+                Id = fromObject.Id,
+                InstanceIndex = fromObject.InstanceIndex,
+                Name = fromObject.Name,
+                ServerDestinationAddress = fromObject.ServerDestinationAddress,
+            };
+            return mapped;
+        }
+
+        public async Task<global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity> MapAsync(global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.MicroserviceContract fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            var mapped = new global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity()
+            {
+                Description = fromObject.Description,
+                Id = fromObject.Id,
+                InstanceIndex = fromObject.InstanceIndex,
+                Name = fromObject.Name,
+                ServerDestinationAddress = fromObject.ServerDestinationAddress,
+            };
+            return mapped;
+        }
+
+        public async Task<global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.MicroserviceContract> MapAsync(global::EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            var mapped = new global::EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.MicroserviceContract()
+            {
+                Description = fromObject.Description,
+                Id = fromObject.Id,
+                InstanceIndex = fromObject.InstanceIndex,
+                Name = fromObject.Name,
+                ServerDestinationAddress = fromObject.ServerDestinationAddress,
+            };
+            return mapped;
+        }
+        public object MapObject(object fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            if (fromObject.GetType() == typeof(EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity))
+                return Map((EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity)fromObject, uniqueRecordId, language, parameters);
+            return Map((EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.MicroserviceContract)fromObject, uniqueRecordId, language, parameters);
+        }
+        public async Task<object> MapObjectAsync(object fromObject, string uniqueRecordId, string language, object[] parameters)
+        {
+            if (fromObject == default)
+                return default;
+            if (fromObject.GetType() == typeof(EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity))
+                return await MapAsync((EasyMicroservices.WhiteLabelsMicroservice.Database.Entities.MicroserviceEntity)fromObject, uniqueRecordId, language, parameters);
+            return await MapAsync((EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common.MicroserviceContract)fromObject, uniqueRecordId, language, parameters);
+        }
+    }
     public class WhiteLabelEntity_WhiteLabelContract_Mapper : IMapper
     {
         readonly IMapperProvider _mapper;

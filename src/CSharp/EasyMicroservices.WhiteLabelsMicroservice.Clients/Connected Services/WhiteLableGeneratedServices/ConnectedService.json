@@ -45,7 +45,7 @@
       "SerializeTypeInformation": false,
       "QueryNullValue": "",
       "ClassName": "{controller}Client",
-      "OperationGenerationMode": 3,
+      "OperationGenerationMode": 2,
       "AdditionalNamespaceUsages": [],
       "AdditionalContractNamespaceUsages": [],
       "GenerateOptionalParameters": false,
