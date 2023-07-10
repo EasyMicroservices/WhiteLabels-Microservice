@@ -32,7 +32,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
                 options.SchemaFilter<XEnumNamesSchemaFilter>();
             });
 
-            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ContextTableEntity, MicroserviceContextTableContract, MicroserviceContextTableContract, MicroserviceContextTableContract>());
+            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetManyToManyContractLogic<MicroserviceContextTableEntity, MicroserviceContextTableContract, MicroserviceContextTableContract, MicroserviceContextTableContract>());
             builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<WhiteLabelEntity, WhiteLabelContract, WhiteLabelContract, WhiteLabelContract>());
 
             builder.Services.AddHttpContextAccessor();

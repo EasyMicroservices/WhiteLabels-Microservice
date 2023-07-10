@@ -6,9 +6,7 @@
         public long MicroserviceId { get; set; }
 
         public string ContextName { get; set; }
-        public long ContextId { get; set; }
-
         public string TableName { get; set; }
-        public long TableId { get; set; }
+        public long ContextTableId { get; set; }
     }
 }
