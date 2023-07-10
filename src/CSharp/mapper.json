@@ -66,6 +66,27 @@
 							"ToName": "$fromObject.ContextTable?.TableName"
 						}
 					]
+				},
+				{
+					"DisplayName": "MicroserviceEntity_MicroserviceContract",
+					"MapFrom": {
+						"Name": "MicroserviceEntity",
+						"Namespace": "EasyMicroservices.WhiteLabelsMicroservice.Database.Entities",
+						"AssebmlyFileName": "EasyMicroservices.WhiteLabelsMicroservice.Database.dll"
+					},
+					"MapTo": {
+						"Name": "MicroserviceContract",
+						"Namespace": "EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common",
+						"AssebmlyFileName": "EasyMicroservices.WhiteLabelsMicroservice.Domain.dll"
+					},
+					"SkippedProperties": [
+						{
+							"Name": "MicroserviceContextTables"
+						}
+					],
+					"CustomProperties": [
+						
+					]
 				}
 			]
 		}
