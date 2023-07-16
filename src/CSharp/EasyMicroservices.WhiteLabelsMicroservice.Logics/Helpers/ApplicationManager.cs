@@ -1,11 +1,11 @@
-﻿using EasyMicroservices.WhiteLabelsMicroservice.Interfaces;
+﻿using EasyMicroservices.CommentsMicroservice.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasyMicroservices.WhiteLabelsMicroservice.Helpers
+namespace EasyMicroservices.CommentsMicroservice.Helpers
 {
     public class ApplicationManager
     {

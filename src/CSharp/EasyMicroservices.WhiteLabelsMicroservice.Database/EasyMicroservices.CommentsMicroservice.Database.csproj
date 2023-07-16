@@ -1,17 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>EasyMicroservices.WhiteLabelsMicroservice</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>EasyMicroservices.CommentsMicroservice</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Database\Documents\" />
     <Folder Include="Migrations\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\EasyMicroservices.WhiteLabelsMicroservice.Domain\EasyMicroservices.WhiteLabelsMicroservice.Domain.csproj" />
   </ItemGroup>
   
   <ItemGroup>
@@ -20,6 +16,10 @@
     <PackageReference Include="EasyMicroservices.Database.EntityFrameworkCore" Version="0.0.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\EasyMicroservices.WhiteLabelsMicroservice.Domain\EasyMicroservices.CommentsMicroservice.Domain.csproj" />
   </ItemGroup>
   
 </Project>

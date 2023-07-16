@@ -1,12 +1,12 @@
-﻿using EasyMicroservices.WhiteLabelsMicroservice.Helpers;
-using EasyMicroservices.WhiteLabelsMicroservice.Interfaces;
+﻿using EasyMicroservices.CommentsMicroservice.Helpers;
+using EasyMicroservices.CommentsMicroservice.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EasyMicroservices.WhiteLabelsMicroservice
+namespace EasyMicroservices.CommentsMicroservice
 {
     public class StartUp
     {

@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>EasyMicroservices.WhiteLabelsMicroservice</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>EasyMicroservices.CommentsMicroservice</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Contracts\Requests\Filters\" />
+    <Folder Include="Contracts\Responses\" />
     <Folder Include="DataTypes\" />
   </ItemGroup>
 

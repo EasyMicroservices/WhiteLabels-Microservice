@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace EasyMicroservices.WhiteLabelsMicroservice.Migrations
+namespace EasyMicroservices.CommentsMicroservice.Migrations
 {
     /// <inheritdoc />
     public partial class Initialize : Migration

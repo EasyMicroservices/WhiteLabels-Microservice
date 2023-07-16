@@ -1,11 +1,11 @@
 using EasyMicroservices.Mapper.CompileTimeMapper.Providers;
 using EasyMicroservices.Mapper.SerializerMapper.Providers;
 using EasyMicroservices.Serialization.Newtonsoft.Json.Providers;
-using EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common;
-using EasyMicroservices.WhiteLabelsMicroservice.Contracts.Responses;
-using EasyMicroservices.WhiteLabelsMicroservice.Database;
-using EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts;
-using EasyMicroservices.WhiteLabelsMicroservice.Database.Entities;
+using EasyMicroservices.CommentsMicroservice.Contracts.Common;
+//using EasyMicroservices.CommentsMicroservice.Contracts.Responses;
+using EasyMicroservices.CommentsMicroservice.Database;
+using EasyMicroservices.CommentsMicroservice.Database.Contexts;
+using EasyMicroservices.CommentsMicroservice.Database.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.OpenApi.Any;
@@ -13,7 +13,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 
-namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
+namespace EasyMicroservices.CommentsMicroservice.WebApi
 {
     public class Program
     {
@@ -32,11 +32,9 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
                 options.SchemaFilter<XEnumNamesSchemaFilter>();
             });
 
-            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetManyToManyContractLogic<MicroserviceContextTableEntity, MicroserviceContextTableContract, MicroserviceContextTableContract, MicroserviceContextTableContract>());
-            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<WhiteLabelEntity, WhiteLabelContract, WhiteLabelContract, WhiteLabelContract>());
-            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<MicroserviceEntity, MicroserviceContract, MicroserviceContract, MicroserviceContract>());
-            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<ContextTableEntity, ContextTableContract, ContextTableContract, ContextTableContract>());
-            
+            builder.Services.AddScoped((serviceProvider) => new DependencyManager().GetContractLogic<CommentEntity, CommentContract, CommentContract, CommentContract>());
+
+
             builder.Services.AddHttpContextAccessor();
             builder.Services.AddScoped<IDatabaseBuilder>(serviceProvider => new DatabaseBuilder());
 
@@ -50,13 +48,13 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
             app.UseAuthorization();
             app.MapControllers();
 
-            var context = new WhiteLabelContext(new DatabaseBuilder());
-            await context.Database.MigrateAsync();
-            await context.DisposeAsync();
+            //var context = new CommentContext(new DatabaseBuilder());
+            //await context.Database.MigrateAsync();
+            //await context.DisposeAsync();
 
             //var items = context.MicroserviceContextTables.ToList();
             //CreateDatabase();
-            
+
             StartUp startUp = new StartUp();
             await startUp.Run(new DependencyManager());
             app.Run();
@@ -64,7 +62,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
 
         static void CreateDatabase()
         {
-            using (var context = new WhiteLabelContext(new DatabaseBuilder()))
+            using (var context = new CommentContext(new DatabaseBuilder()))
             {
                 if (context.Database.EnsureCreated())
                 {

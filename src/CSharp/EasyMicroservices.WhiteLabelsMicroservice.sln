@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.WhiteLabelsMicroservice.ConsoleApp", "EasyMicroservices.WhiteLabelsMicroservice.ConsoleApp\EasyMicroservices.WhiteLabelsMicroservice.ConsoleApp.csproj", "{51E43D35-382D-4B03-9F8E-4AD06F42A564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.CommentsMicroservice.ConsoleApp", "EasyMicroservices.WhiteLabelsMicroservice.ConsoleApp\EasyMicroservices.CommentsMicroservice.ConsoleApp.csproj", "{51E43D35-382D-4B03-9F8E-4AD06F42A564}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application-Layer", "Application-Layer", "{5095A63E-0C95-4352-8E6B-4586A9340BFB}"
 EndProject
@@ -13,19 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess-Layer", "DataAcc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test-Layer", "Test-Layer", "{2A1A75C2-9A91-4588-9ADD-046CB14463CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.WhiteLabelsMicroservice.Logics", "EasyMicroservices.WhiteLabelsMicroservice.Logics\EasyMicroservices.WhiteLabelsMicroservice.Logics.csproj", "{B9C10096-811B-4194-9EF1-51496494D375}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.CommentsMicroservice.Logics", "EasyMicroservices.WhiteLabelsMicroservice.Logics\EasyMicroservices.CommentsMicroservice.Logics.csproj", "{B9C10096-811B-4194-9EF1-51496494D375}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.WhiteLabelsMicroservice.Services", "EasyMicroservices.WhiteLabelsMicroservice.Services\EasyMicroservices.WhiteLabelsMicroservice.Services.csproj", "{C7C8AEA1-46CA-4EF8-8A93-0C51D2F47843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.CommentsMicroservice.Services", "EasyMicroservices.WhiteLabelsMicroservice.Services\EasyMicroservices.CommentsMicroservice.Services.csproj", "{C7C8AEA1-46CA-4EF8-8A93-0C51D2F47843}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.WhiteLabelsMicroservice.Database", "EasyMicroservices.WhiteLabelsMicroservice.Database\EasyMicroservices.WhiteLabelsMicroservice.Database.csproj", "{20E2AB6A-22F2-453C-97AD-2619F794D569}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.CommentsMicroservice.Database", "EasyMicroservices.WhiteLabelsMicroservice.Database\EasyMicroservices.CommentsMicroservice.Database.csproj", "{20E2AB6A-22F2-453C-97AD-2619F794D569}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.WhiteLabelsMicroservice.Domain", "EasyMicroservices.WhiteLabelsMicroservice.Domain\EasyMicroservices.WhiteLabelsMicroservice.Domain.csproj", "{C3BA4AED-22DB-4A1C-BF17-5E99EBFA0BE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.CommentsMicroservice.Domain", "EasyMicroservices.WhiteLabelsMicroservice.Domain\EasyMicroservices.CommentsMicroservice.Domain.csproj", "{C3BA4AED-22DB-4A1C-BF17-5E99EBFA0BE1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.WhiteLabelsMicroservice.Tests", "EasyMicroservices.WhiteLabelsMicroservice.Tests\EasyMicroservices.WhiteLabelsMicroservice.Tests.csproj", "{85194295-5C59-4298-BD30-53FC88849915}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.WhiteLabelsMicroservice.StartUp", "EasyMicroservices.WhiteLabelsMicroservice.StartUp\EasyMicroservices.WhiteLabelsMicroservice.StartUp.csproj", "{6925F635-F9CC-4310-97DF-5DD035CB2224}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.CommentsMicroservice.StartUp", "EasyMicroservices.WhiteLabelsMicroservice.StartUp\EasyMicroservices.CommentsMicroservice.StartUp.csproj", "{6925F635-F9CC-4310-97DF-5DD035CB2224}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.WhiteLabelsMicroservice.WebApi", "EasyMicroservices.WhiteLabelsMicroservice.WebApi\EasyMicroservices.WhiteLabelsMicroservice.WebApi.csproj", "{C58BF15B-763F-432C-AD97-2B7731B0DA97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyMicroservices.CommentsMicroservice.WebApi", "EasyMicroservices.WhiteLabelsMicroservice.WebApi\EasyMicroservices.CommentsMicroservice.WebApi.csproj", "{C58BF15B-763F-432C-AD97-2B7731B0DA97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

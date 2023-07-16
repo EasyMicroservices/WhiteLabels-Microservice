@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace EasyMicroservices.WhiteLabelsMicroservice.Database
+namespace EasyMicroservices.CommentsMicroservice.Database
 {
     public interface IDatabaseBuilder
     {

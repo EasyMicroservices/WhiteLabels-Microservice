@@ -1,4 +1,4 @@
-﻿namespace EasyMicroservices.WhiteLabelsMicroservice.ConsoleApp;
+﻿namespace EasyMicroservices.CommentsMicroservice.ConsoleApp;
 class Program
 {
     static void Main(string[] args)

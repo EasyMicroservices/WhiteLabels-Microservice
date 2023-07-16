@@ -9,12 +9,13 @@ using EasyMicroservices.Mapper.CompileTimeMapper.Providers;
 using EasyMicroservices.Mapper.Interfaces;
 using EasyMicroservices.Mapper.SerializerMapper.Providers;
 using EasyMicroservices.Serialization.Newtonsoft.Json.Providers;
-using EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts;
-using EasyMicroservices.WhiteLabelsMicroservice.Interfaces;
+using EasyMicroservices.CommentsMicroservice.Database.Contexts;
+using EasyMicroservices.CommentsMicroservice.Interfaces;
 using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
-namespace EasyMicroservices.WhiteLabelsMicroservice
+namespace EasyMicroservices.CommentsMicroservice
 {
     public class DependencyManager : IDependencyManager
     {
@@ -47,7 +48,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
 
         public virtual IDatabase GetDatabase()
         {
-            return new EntityFrameworkCoreDatabaseProvider(new WhiteLabelContext(new DatabaseBuilder()));
+            return new EntityFrameworkCoreDatabaseProvider(new CommentContext(new DatabaseBuilder()));
         }
 
         public virtual IMapperProvider GetMapper()
@@ -69,4 +70,5 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
             return mapper;
         }
     }
+
 }

@@ -2,7 +2,7 @@
 using EasyMicroservices.Database.Interfaces;
 using EasyMicroservices.Mapper.Interfaces;
 
-namespace EasyMicroservices.WhiteLabelsMicroservice.Interfaces
+namespace EasyMicroservices.CommentsMicroservice.Interfaces
 {
     public interface IDependencyManager
     {
