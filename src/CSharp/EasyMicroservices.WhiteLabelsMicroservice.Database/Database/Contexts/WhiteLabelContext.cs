@@ -1,5 +1,6 @@
 ﻿using EasyMicroservices.WhiteLabelsMicroservice.Database.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
 {
@@ -152,6 +153,18 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
                 {
                     ContextTableId = 6,
                     MicroserviceId = 1,
+                });
+            modelBuilder.Entity<WhiteLabelEntity>().HasData(
+                new WhiteLabelEntity()
+                {
+                    Id = 1,
+                    Name = "ProjectName"
+                },
+                new WhiteLabelEntity()
+                {
+                    Id = 2,
+                    ParentId = 1,
+                    Name = "TenantName"
                 });
         }
     }
