@@ -1,5 +1,6 @@
 ﻿using EasyMicroservices.WhiteLabelsMicroservice.Database;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,14 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
 {
     public class DatabaseBuilder : IDatabaseBuilder
     {
+        readonly IConfiguration config = new ConfigurationBuilder()
+        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+        .Build();
+
         public void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseInMemoryDatabase("WhiteLabels database");
-            optionsBuilder.UseSqlServer("Server=.;Database=WhiteLabels;User ID=test;Password=test1234;Trusted_Connection=True;TrustServerCertificate=True");
+            //optionsBuilder.UseInMemoryDatabase("Storage database");
+            optionsBuilder.UseSqlServer(config.GetConnectionString("local"));
         }
     }
 }
