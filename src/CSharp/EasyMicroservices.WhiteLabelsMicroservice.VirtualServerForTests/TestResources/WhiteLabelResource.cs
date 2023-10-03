@@ -68,7 +68,7 @@ Content-Length: 0
 Content-Type: application/json; charset=utf-8
 Content-Length: 0
 
-{{""isSuccess"":true,""result"":{Newtonsoft.Json.JsonConvert.SerializeObject(contextTables)}}}");
+{{""isSuccess"":true,""result"":{Newtonsoft.Json.JsonConvert.SerializeObject(microserviceContextTables)}}}");
 
             
             result.Add(@$"GET /api/ContextTable/GetAll HTTP/1.1
@@ -78,7 +78,7 @@ Content-Length: 0
 Content-Type: application/json; charset=utf-8
 Content-Length: 0
 
-{{""isSuccess"":true,""result"":{Newtonsoft.Json.JsonConvert.SerializeObject(microserviceContextTables)}}}");
+{{""isSuccess"":true,""result"":{Newtonsoft.Json.JsonConvert.SerializeObject(contextTables)}}}");
 
 
             return result;
