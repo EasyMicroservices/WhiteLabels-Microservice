@@ -27,8 +27,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Clients.Tests
                 HttpHandler httpHandler = new HttpHandler(resourceManager);
                 await httpHandler.Start(Port);
                 resourceManager.Append(@$"GET *RequestSkipBody* HTTP/1.1
-Host: localhost:{Port}
-Accept: text/plain*RequestSkipBody*"
+*RequestSkipBody*"
 ,
 @"HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
