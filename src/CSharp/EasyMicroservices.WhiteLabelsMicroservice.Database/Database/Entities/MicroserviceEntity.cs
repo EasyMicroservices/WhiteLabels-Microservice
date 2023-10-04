@@ -1,4 +1,4 @@
-﻿using EasyMicroservices.Cores.Database.Interfaces;
+﻿using EasyMicroservices.Cores.Interfaces;
 using EasyMicroservices.WhiteLabelsMicroservice.Database.Schemas;
 using System.Collections.Generic;
 

@@ -13,13 +13,12 @@
   <ItemGroup>
     <ProjectReference Include="..\EasyMicroservices.WhiteLabelsMicroservice.Domain\EasyMicroservices.WhiteLabelsMicroservice.Domain.csproj" />
   </ItemGroup>
-  
   <ItemGroup>
     <PackageReference Include="EasyMicroservices.Configuration" Version="0.0.0.2" />
-    <PackageReference Include="EasyMicroservices.Cores.Database" Version="0.0.0.11" />
-    <PackageReference Include="EasyMicroservices.Database.EntityFrameworkCore" Version="0.0.0.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
+    <PackageReference Include="EasyMicroservices.Cores.Database" Version="0.0.0.37" />
+    <PackageReference Include="EasyMicroservices.Database.EntityFrameworkCore" Version="0.0.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
   </ItemGroup>
   
 </Project>

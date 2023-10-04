@@ -1,133 +1,544 @@
 ﻿{
-  "swagger": "2.0",
+  "openapi": "3.0.1",
   "info": {
     "title": "EasyMicroservices.WhiteLabelsMicroservice.WebApi",
     "version": "1.0"
   },
   "paths": {
-    "/api/ContextTable/GetById": {
-      "get": {
-        "tags": [
-          "ContextTable"
-        ],
-        "operationId": "GetById",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "type": "integer",
-            "name": "id",
-            "in": "query",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/ContextTableContractMessageContract"
-            }
-          }
-        }
-      }
-    },
     "/api/ContextTable/Add": {
       "post": {
         "tags": [
           "ContextTable"
         ],
         "operationId": "Add",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/ContextTableContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/Int64MessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/AddBulk": {
+      "post": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "AddBulk",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractCreateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractCreateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractCreateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
             }
           }
         }
       }
     },
     "/api/ContextTable/Update": {
-      "post": {
+      "put": {
         "tags": [
           "ContextTable"
         ],
         "operationId": "Update",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/ContextTableContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/ContextTableContractMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/UpdateBulk": {
+      "put": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "UpdateBulk",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractUpdateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractUpdateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractUpdateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
             }
           }
         }
       }
     },
     "/api/ContextTable/HardDeleteById": {
-      "post": {
+      "delete": {
         "tags": [
           "ContextTable"
         ],
         "operationId": "HardDeleteById",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "type": "integer",
-            "name": "id",
-            "in": "query",
-            "format": "int64"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/HardDeleteBulkByIds": {
+      "delete": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "HardDeleteBulkByIds",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/SoftDeleteById": {
+      "delete": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "SoftDeleteById",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/SoftDeleteBulkByIds": {
+      "delete": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "SoftDeleteBulkByIds",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/GetById": {
+      "post": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "GetById",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/GetByUniqueIdentity": {
+      "post": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "GetByUniqueIdentity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/Filter": {
+      "post": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "Filter",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              }
             }
           }
         }
@@ -139,45 +550,74 @@
           "ContextTable"
         ],
         "operationId": "GetAll",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/ContextTableContractListMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              }
             }
           }
         }
       }
     },
-    "/api/Microservice/GetById": {
-      "get": {
+    "/api/ContextTable/GetAllByUniqueIdentity": {
+      "post": {
         "tags": [
-          "Microservice"
+          "ContextTable"
         ],
-        "operationId": "GetById2",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "type": "integer",
-            "name": "id",
-            "in": "query",
-            "format": "int64"
+        "operationId": "GetAllByUniqueIdentity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContractMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractListMessageContract"
+                }
+              }
             }
           }
         }
@@ -189,94 +629,534 @@
           "Microservice"
         ],
         "operationId": "Add2",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/Int64MessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/AddBulk": {
+      "post": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "AddBulk2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractCreateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractCreateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractCreateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
             }
           }
         }
       }
     },
     "/api/Microservice/Update": {
-      "post": {
+      "put": {
         "tags": [
           "Microservice"
         ],
         "operationId": "Update2",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContractMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/UpdateBulk": {
+      "put": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "UpdateBulk2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractUpdateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractUpdateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractUpdateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
             }
           }
         }
       }
     },
     "/api/Microservice/HardDeleteById": {
-      "post": {
+      "delete": {
         "tags": [
           "Microservice"
         ],
         "operationId": "HardDeleteById2",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "type": "integer",
-            "name": "id",
-            "in": "query",
-            "format": "int64"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/HardDeleteBulkByIds": {
+      "delete": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "HardDeleteBulkByIds2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/SoftDeleteById": {
+      "delete": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "SoftDeleteById2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/SoftDeleteBulkByIds": {
+      "delete": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "SoftDeleteBulkByIds2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/GetById": {
+      "post": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "GetById2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/GetByUniqueIdentity": {
+      "post": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "GetByUniqueIdentity2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/Filter": {
+      "post": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "Filter2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              }
             }
           }
         }
@@ -288,51 +1168,74 @@
           "Microservice"
         ],
         "operationId": "GetAll2",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContractListMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              }
             }
           }
         }
       }
     },
-    "/api/MicroserviceContextTable/GetById": {
-      "get": {
+    "/api/Microservice/GetAllByUniqueIdentity": {
+      "post": {
         "tags": [
-          "MicroserviceContextTable"
+          "Microservice"
         ],
-        "operationId": "GetById3",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContextTableContract"
+        "operationId": "GetAllByUniqueIdentity2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContextTableContractMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractListMessageContract"
+                }
+              }
             }
           }
         }
@@ -344,100 +1247,534 @@
           "MicroserviceContextTable"
         ],
         "operationId": "Add3",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContextTableContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContextTableContractMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/AddBulk": {
+      "post": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "AddBulk3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractCreateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractCreateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractCreateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
             }
           }
         }
       }
     },
     "/api/MicroserviceContextTable/Update": {
-      "post": {
+      "put": {
         "tags": [
           "MicroserviceContextTable"
         ],
         "operationId": "Update3",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContextTableContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContextTableContractMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/UpdateBulk": {
+      "put": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "UpdateBulk3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractUpdateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractUpdateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractUpdateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
             }
           }
         }
       }
     },
     "/api/MicroserviceContextTable/HardDeleteById": {
-      "post": {
+      "delete": {
         "tags": [
           "MicroserviceContextTable"
         ],
         "operationId": "HardDeleteById3",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContextTableContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractDeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractDeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractDeleteRequestContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/HardDeleteBulkByIds": {
+      "delete": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "HardDeleteBulkByIds3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractDeleteBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractDeleteBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractDeleteBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/SoftDeleteById": {
+      "delete": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "SoftDeleteById3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractSoftDeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractSoftDeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractSoftDeleteRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/SoftDeleteBulkByIds": {
+      "delete": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "SoftDeleteBulkByIds3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractSoftDeleteBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractSoftDeleteBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractSoftDeleteBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/GetById": {
+      "post": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "GetById3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractGetIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractGetIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractGetIdRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/GetByUniqueIdentity": {
+      "post": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "GetByUniqueIdentity3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/Filter": {
+      "post": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "Filter3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              }
             }
           }
         }
@@ -449,45 +1786,74 @@
           "MicroserviceContextTable"
         ],
         "operationId": "GetAll3",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MicroserviceContextTableContractListMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              }
             }
           }
         }
       }
     },
-    "/api/WhiteLabel/GetById": {
-      "get": {
+    "/api/MicroserviceContextTable/GetAllByUniqueIdentity": {
+      "post": {
         "tags": [
-          "WhiteLabel"
+          "MicroserviceContextTable"
         ],
-        "operationId": "GetById4",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "type": "integer",
-            "name": "id",
-            "in": "query",
-            "format": "int64"
+        "operationId": "GetAllByUniqueIdentity3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/WhiteLabelContractMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractListMessageContract"
+                }
+              }
             }
           }
         }
@@ -499,94 +1865,534 @@
           "WhiteLabel"
         ],
         "operationId": "Add4",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/WhiteLabelContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/Int64MessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int64MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/AddBulk": {
+      "post": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "AddBulk4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractCreateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractCreateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractCreateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
             }
           }
         }
       }
     },
     "/api/WhiteLabel/Update": {
-      "post": {
+      "put": {
         "tags": [
           "WhiteLabel"
         ],
         "operationId": "Update4",
-        "consumes": [
-          "application/json",
-          "text/json",
-          "application/*+json"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/WhiteLabelContract"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/WhiteLabelContractMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/UpdateBulk": {
+      "put": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "UpdateBulk4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractUpdateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractUpdateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractUpdateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
             }
           }
         }
       }
     },
     "/api/WhiteLabel/HardDeleteById": {
-      "post": {
+      "delete": {
         "tags": [
           "WhiteLabel"
         ],
         "operationId": "HardDeleteById4",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "type": "integer",
-            "name": "id",
-            "in": "query",
-            "format": "int64"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteRequestContract"
+              }
+            }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/MessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/HardDeleteBulkByIds": {
+      "delete": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "HardDeleteBulkByIds4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64DeleteBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/SoftDeleteById": {
+      "delete": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "SoftDeleteById4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/SoftDeleteBulkByIds": {
+      "delete": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "SoftDeleteBulkByIds4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64SoftDeleteBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/GetById": {
+      "post": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "GetById4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/GetByUniqueIdentity": {
+      "post": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "GetByUniqueIdentity4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/Filter": {
+      "post": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "Filter4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilterRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              }
             }
           }
         }
@@ -598,332 +2404,1019 @@
           "WhiteLabel"
         ],
         "operationId": "GetAll4",
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
         "responses": {
           "200": {
             "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/WhiteLabelContractListMessageContract"
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/GetAllByUniqueIdentity": {
+      "post": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "GetAllByUniqueIdentity4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractListMessageContract"
+                }
+              }
             }
           }
         }
       }
     }
   },
-  "definitions": {
-    "ContextTableContract": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "tableName": {
-          "type": "string"
-        },
-        "contextName": {
-          "type": "string"
-        }
-      }
-    },
-    "ContextTableContractListMessageContract": {
-      "title": "MessageContract<List`1>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "title": "List<ContextTableContract>",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ContextTableContract"
+  "components": {
+    "schemas": {
+      "ContextTableContract": {
+        "type": "object",
+        "description": "EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#ContextTableContract",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          },
+          "tableName": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "contextName": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
           }
         }
-      }
-    },
-    "ContextTableContractMessageContract": {
-      "title": "MessageContract<ContextTableContract>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "$ref": "#/definitions/ContextTableContract"
-        }
-      }
-    },
-    "ErrorContract": {
-      "type": "object",
-      "properties": {
-        "validations": {
-          "title": "List<ValidationContract>",
-          "type": "array",
+      },
+      "ContextTableContractCreateBulkRequestContract": {
+        "title": "CreateBulkRequestContract<ContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
           "items": {
-            "$ref": "#/definitions/ValidationContract"
-          }
-        },
-        "failedReasonType": {
-          "$ref": "#/definitions/FailedReasonType"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "string"
-        },
-        "stackTrace": {
-          "type": "string"
-        }
-      }
-    },
-    "FailedReasonType": {
-      "type": "integer",
-      "format": "int32",
-      "x-enumNames": [
-        "None",
-        "Default",
-        "All",
-        "Other",
-        "Unknown",
-        "Nothing",
-        "SessionAccessDenied",
-        "AccessDenied",
-        "InternalError",
-        "Dupplicate",
-        "Empty",
-        "NotFound",
-        "ValidationsError",
-        "StreamError",
-        "WebServiceNotWorking"
-      ],
-      "enum": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ]
-    },
-    "Int64MessageContract": {
-      "title": "MessageContract<Int64>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "MessageContract": {
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        }
-      }
-    },
-    "MicroserviceContextTableContract": {
-      "type": "object",
-      "properties": {
-        "microserviceName": {
-          "type": "string"
-        },
-        "microserviceId": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "contextName": {
-          "type": "string"
-        },
-        "tableName": {
-          "type": "string"
-        },
-        "contextTableId": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "MicroserviceContextTableContractListMessageContract": {
-      "title": "MessageContract<List`1>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "title": "List<MicroserviceContextTableContract>",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MicroserviceContextTableContract"
+            "title": "List<ContextTableContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ContextTableContract"
+            }
           }
         }
-      }
-    },
-    "MicroserviceContextTableContractMessageContract": {
-      "title": "MessageContract<MicroserviceContextTableContract>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "$ref": "#/definitions/MicroserviceContextTableContract"
-        }
-      }
-    },
-    "MicroserviceContract": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "instanceIndex": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "serverDestinationAddress": {
-          "type": "string"
-        }
-      }
-    },
-    "MicroserviceContractListMessageContract": {
-      "title": "MessageContract<List`1>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "title": "List<MicroserviceContract>",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MicroserviceContract"
+      },
+      "ContextTableContractListMessageContract": {
+        "title": "ListMessageContract<ContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "title": "List<ContextTableContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ContextTableContract"
+            }
+          },
+          "hasItems": {
+            "type": "boolean",
+            "readOnly": true,
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
           }
         }
-      }
-    },
-    "MicroserviceContractMessageContract": {
-      "title": "MessageContract<MicroserviceContract>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "$ref": "#/definitions/MicroserviceContract"
-        }
-      }
-    },
-    "ValidationContract": {
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      }
-    },
-    "WhiteLabelContract": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "parentId": {
-          "title": "Nullable<Int64>",
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "WhiteLabelContractListMessageContract": {
-      "title": "MessageContract<List`1>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "title": "List<WhiteLabelContract>",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/WhiteLabelContract"
+      },
+      "ContextTableContractMessageContract": {
+        "title": "MessageContract<ContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "$ref": "#/components/schemas/ContextTableContract"
           }
         }
-      }
-    },
-    "WhiteLabelContractMessageContract": {
-      "title": "MessageContract<WhiteLabelContract>",
-      "type": "object",
-      "properties": {
-        "isSuccess": {
-          "type": "boolean"
-        },
-        "error": {
-          "$ref": "#/definitions/ErrorContract"
-        },
-        "result": {
-          "$ref": "#/definitions/WhiteLabelContract"
+      },
+      "ContextTableContractUpdateBulkRequestContract": {
+        "title": "UpdateBulkRequestContract<ContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "title": "List<ContextTableContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ContextTableContract"
+            }
+          }
+        }
+      },
+      "ErrorContract": {
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ErrorContract",
+        "additionalProperties": false,
+        "properties": {
+          "validations": {
+            "title": "List<ValidationContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ValidationContract"
+            }
+          },
+          "failedReasonType": {
+            "$ref": "#/components/schemas/FailedReasonType"
+          },
+          "message": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "endUserMessage": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "details": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "stackTrace": {
+            "title": "List<String>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "type": "string",
+              "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String"
+            }
+          },
+          "children": {
+            "title": "List<ErrorContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ErrorContract"
+            }
+          },
+          "serviceDetails": {
+            "$ref": "#/components/schemas/ServiceDetailsContract"
+          }
+        }
+      },
+      "FailedReasonType": {
+        "type": "integer",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#FailedReasonType",
+        "format": "int32",
+        "x-enumNames": [
+          "None",
+          "Default",
+          "All",
+          "Other",
+          "Unknown",
+          "Nothing",
+          "SessionAccessDenied",
+          "AccessDenied",
+          "InternalError",
+          "Duplicate",
+          "Empty",
+          "NotFound",
+          "ValidationsError",
+          "StreamError",
+          "WebServiceNotWorking",
+          "Incorrect",
+          "OperationFailed"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      "FilterRequestContract": {
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#FilterRequestContract",
+        "additionalProperties": false,
+        "properties": {
+          "isDeleted": {
+            "title": "Nullable<Boolean>",
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "nullable": true
+          },
+          "fromDeletedDateTime": {
+            "title": "Nullable<DateTime>",
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "date-time",
+            "nullable": true
+          },
+          "toDeletedDateTime": {
+            "title": "Nullable<DateTime>",
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fromCreationDateTime": {
+            "title": "Nullable<DateTime>",
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "date-time",
+            "nullable": true
+          },
+          "toCreationDateTime": {
+            "title": "Nullable<DateTime>",
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fromModificationDateTime": {
+            "title": "Nullable<DateTime>",
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "date-time",
+            "nullable": true
+          },
+          "toModificationDateTime": {
+            "title": "Nullable<DateTime>",
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "date-time",
+            "nullable": true
+          },
+          "uniqueIdentity": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "uniqueIdentityType": {
+            "$ref": "#/components/schemas/GetUniqueIdentityType"
+          },
+          "index": {
+            "title": "Nullable<Int64>",
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "int64",
+            "nullable": true
+          },
+          "length": {
+            "title": "Nullable<Int64>",
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "int64",
+            "nullable": true
+          },
+          "sortColumnName": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "isDescending": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          }
+        }
+      },
+      "GetUniqueIdentityRequestContract": {
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetUniqueIdentityRequestContract",
+        "additionalProperties": false,
+        "properties": {
+          "uniqueIdentity": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/GetUniqueIdentityType"
+          }
+        }
+      },
+      "GetUniqueIdentityType": {
+        "type": "integer",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.DataTypes#GetUniqueIdentityType",
+        "format": "int32",
+        "x-enumNames": [
+          "None",
+          "Default",
+          "All",
+          "Other",
+          "Unknown",
+          "Nothing",
+          "OnlyParent",
+          "OnlyChilren"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "Int64DeleteBulkRequestContract": {
+        "title": "DeleteBulkRequestContract<Int64>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "ids": {
+            "title": "List<Int64>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+              "format": "int64"
+            }
+          }
+        }
+      },
+      "Int64DeleteRequestContract": {
+        "title": "DeleteRequestContract<Int64>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          }
+        }
+      },
+      "Int64GetIdRequestContract": {
+        "title": "GetIdRequestContract<Int64>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetIdRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          }
+        }
+      },
+      "Int64MessageContract": {
+        "title": "MessageContract<Int64>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          }
+        }
+      },
+      "Int64SoftDeleteBulkRequestContract": {
+        "title": "SoftDeleteBulkRequestContract<Int64>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "ids": {
+            "title": "List<Int64>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "type": "integer",
+              "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+              "format": "int64"
+            }
+          },
+          "isDelete": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          }
+        }
+      },
+      "Int64SoftDeleteRequestContract": {
+        "title": "SoftDeleteRequestContract<Int64>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          },
+          "isDelete": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          }
+        }
+      },
+      "MessageContract": {
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          }
+        }
+      },
+      "MicroserviceContextTableContract": {
+        "type": "object",
+        "description": "EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Responses#MicroserviceContextTableContract",
+        "additionalProperties": false,
+        "properties": {
+          "microserviceName": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "microserviceId": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          },
+          "contextName": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "tableName": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "contextTableId": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          }
+        }
+      },
+      "MicroserviceContextTableContractCreateBulkRequestContract": {
+        "title": "CreateBulkRequestContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "title": "List<MicroserviceContextTableContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MicroserviceContextTableContract"
+            }
+          }
+        }
+      },
+      "MicroserviceContextTableContractDeleteBulkRequestContract": {
+        "title": "DeleteBulkRequestContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "ids": {
+            "title": "List<MicroserviceContextTableContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MicroserviceContextTableContract"
+            }
+          }
+        }
+      },
+      "MicroserviceContextTableContractDeleteRequestContract": {
+        "title": "DeleteRequestContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/MicroserviceContextTableContract"
+          }
+        }
+      },
+      "MicroserviceContextTableContractGetIdRequestContract": {
+        "title": "GetIdRequestContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetIdRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/MicroserviceContextTableContract"
+          }
+        }
+      },
+      "MicroserviceContextTableContractListMessageContract": {
+        "title": "ListMessageContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "title": "List<MicroserviceContextTableContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MicroserviceContextTableContract"
+            }
+          },
+          "hasItems": {
+            "type": "boolean",
+            "readOnly": true,
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          }
+        }
+      },
+      "MicroserviceContextTableContractMessageContract": {
+        "title": "MessageContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "$ref": "#/components/schemas/MicroserviceContextTableContract"
+          }
+        }
+      },
+      "MicroserviceContextTableContractSoftDeleteBulkRequestContract": {
+        "title": "SoftDeleteBulkRequestContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "ids": {
+            "title": "List<MicroserviceContextTableContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MicroserviceContextTableContract"
+            }
+          },
+          "isDelete": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          }
+        }
+      },
+      "MicroserviceContextTableContractSoftDeleteRequestContract": {
+        "title": "SoftDeleteRequestContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/MicroserviceContextTableContract"
+          },
+          "isDelete": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          }
+        }
+      },
+      "MicroserviceContextTableContractUpdateBulkRequestContract": {
+        "title": "UpdateBulkRequestContract<MicroserviceContextTableContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "title": "List<MicroserviceContextTableContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MicroserviceContextTableContract"
+            }
+          }
+        }
+      },
+      "MicroserviceContract": {
+        "type": "object",
+        "description": "EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#MicroserviceContract",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "instanceIndex": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int32",
+            "format": "int32"
+          },
+          "serverDestinationAddress": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          }
+        }
+      },
+      "MicroserviceContractCreateBulkRequestContract": {
+        "title": "CreateBulkRequestContract<MicroserviceContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "title": "List<MicroserviceContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MicroserviceContract"
+            }
+          }
+        }
+      },
+      "MicroserviceContractListMessageContract": {
+        "title": "ListMessageContract<MicroserviceContract>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "title": "List<MicroserviceContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MicroserviceContract"
+            }
+          },
+          "hasItems": {
+            "type": "boolean",
+            "readOnly": true,
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          }
+        }
+      },
+      "MicroserviceContractMessageContract": {
+        "title": "MessageContract<MicroserviceContract>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "$ref": "#/components/schemas/MicroserviceContract"
+          }
+        }
+      },
+      "MicroserviceContractUpdateBulkRequestContract": {
+        "title": "UpdateBulkRequestContract<MicroserviceContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "title": "List<MicroserviceContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/MicroserviceContract"
+            }
+          }
+        }
+      },
+      "ServiceDetailsContract": {
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ServiceDetailsContract",
+        "additionalProperties": false,
+        "properties": {
+          "servieRouteAddress": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "methodName": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "path": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "porjectName": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          }
+        }
+      },
+      "SuccessContract": {
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#SuccessContract",
+        "additionalProperties": false,
+        "properties": {
+          "endUserMessage": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          }
+        }
+      },
+      "ValidationContract": {
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ValidationContract",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          }
+        }
+      },
+      "WhiteLabelContract": {
+        "type": "object",
+        "description": "EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#WhiteLabelContract",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          },
+          "parentId": {
+            "title": "Nullable<Int64>",
+            "type": "integer",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
+            "format": "int64",
+            "nullable": true
+          }
+        }
+      },
+      "WhiteLabelContractCreateBulkRequestContract": {
+        "title": "CreateBulkRequestContract<WhiteLabelContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "title": "List<WhiteLabelContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/WhiteLabelContract"
+            }
+          }
+        }
+      },
+      "WhiteLabelContractListMessageContract": {
+        "title": "ListMessageContract<WhiteLabelContract>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "title": "List<WhiteLabelContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/WhiteLabelContract"
+            }
+          },
+          "hasItems": {
+            "type": "boolean",
+            "readOnly": true,
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          }
+        }
+      },
+      "WhiteLabelContractMessageContract": {
+        "title": "MessageContract<WhiteLabelContract>",
+        "type": "object",
+        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "$ref": "#/components/schemas/WhiteLabelContract"
+          }
+        }
+      },
+      "WhiteLabelContractUpdateBulkRequestContract": {
+        "title": "UpdateBulkRequestContract<WhiteLabelContract>",
+        "type": "object",
+        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "title": "List<WhiteLabelContract>",
+            "type": "array",
+            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/WhiteLabelContract"
+            }
+          }
         }
       }
     }
