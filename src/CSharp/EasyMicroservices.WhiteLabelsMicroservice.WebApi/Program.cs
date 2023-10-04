@@ -51,7 +51,8 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
             app.MapControllers();
 
             var context = new WhiteLabelContext(new DatabaseBuilder());
-            await context.Database.MigrateAsync();
+            await context.Database.EnsureCreatedAsync();
+            //await context.Database.MigrateAsync();
             await context.DisposeAsync();
 
             //var items = context.MicroserviceContextTables.ToList();
@@ -110,10 +111,9 @@ CREATE TABLE [dbo].[__EFMigrationsHistory](
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
             var type = context.Type;
-
+            schema.Description = $"{type.Assembly.GetName().FullName}#{type.Namespace}#{type.Name}";
             if (type.IsGenericType == false)
                 return;
-
             schema.Title = $"{type.Name[0..^2]}<{type.GenericTypeArguments[0].Name}>";
         }
     }

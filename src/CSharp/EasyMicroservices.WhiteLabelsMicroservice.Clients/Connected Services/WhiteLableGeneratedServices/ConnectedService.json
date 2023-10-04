@@ -8,7 +8,7 @@
     "ServiceName": "WhiteLableGeneratedServices",
     "AcceptAllUntrustedCertificates": true,
     "GeneratedFileName": "OpenAPI",
-    "Endpoint": "https://localhost:7184/swagger/v1/swagger.json",
+    "Endpoint": "http://localhost:1041/swagger/v1/swagger.json",
     "GeneratedFileNamePrefix": null,
     "GenerateCSharpClient": true,
     "GenerateTypeScriptClient": false,

@@ -24,7 +24,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
         }
 
         public virtual IContractLogic<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract, long> GetContractLogic<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract>()
-            where TEntity : class, IIdSchema<long>
+            where TEntity : class
             where TResponseContract : class
         {
             return new LongIdMappedDatabaseLogicBase<TEntity, TCreateRequestContract, TUpdateRequestContract, TResponseContract>(
