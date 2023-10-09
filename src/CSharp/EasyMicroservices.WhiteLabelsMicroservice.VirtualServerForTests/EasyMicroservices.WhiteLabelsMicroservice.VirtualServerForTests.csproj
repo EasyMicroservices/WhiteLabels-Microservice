@@ -17,7 +17,7 @@
     <Platforms>AnyCPU;x64;x86</Platforms>
     <Authors>EasyMicroservices</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.0.2</Version>
+    <Version>0.0.0.3</Version>
     <Description>white label</Description>
     <Copyright>EasyMicroservices@gmail.com</Copyright>
     <PackageTags>whitelabel,tests,testtemplate,testtemplates,examples,server,testserver,virtual,virtualserver</PackageTags>
@@ -26,12 +26,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EasyMicroservices.Laboratory" Version="0.0.0.11" />
+    <PackageReference Include="EasyMicroservices.Laboratory" Version="0.0.0.12" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="EasyMicroservices.Cores.AspEntityFrameworkCoreApi">
-      <Version>0.0.0.18</Version>
+      <Version>0.0.0.20</Version>
     </PackageReference>
   </ItemGroup>
 
