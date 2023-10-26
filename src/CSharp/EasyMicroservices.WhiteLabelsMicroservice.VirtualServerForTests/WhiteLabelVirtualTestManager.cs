@@ -1,6 +1,6 @@
 ﻿using EasyMicroservices.Laboratory.Constants;
 using EasyMicroservices.Laboratory.Engine;
-using EasyMicroservices.Laboratory.Engine.Net.Http;
+using EasyMicroservices.Laboratory.Engine.Net;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -13,14 +13,14 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.VirtualServerForTests
         static Dictionary<int, ResourceManager> InitializedPorts = new Dictionary<int, ResourceManager>();
         public int CurrentPortNumber { get; set; }
 
-        public async Task<bool> OnInitialize(int portNumber)
+        public async Task<bool> OnInitialize(int portNumber, BaseHandler handler = null)
         {
             CurrentPortNumber = portNumber;
             if (InitializedPorts.ContainsKey(portNumber))
                 return false;
             InitializedPorts[portNumber] = new ResourceManager();
-            HttpHandler httpHandler = new HttpHandler(InitializedPorts[portNumber]);
-            await httpHandler.Start(portNumber);
+            handler ??= BaseHandler.CreateOSHandler(InitializedPorts[portNumber]);
+            await handler.Start(portNumber);
             return true;
         }
 
