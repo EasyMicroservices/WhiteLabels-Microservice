@@ -11,7 +11,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="EasyMicroservices.Cores.AspCoreApi" Version="0.0.0.36" />
+    <PackageReference Include="EasyMicroservices.Cores.AspCoreApi" Version="0.0.0.42" />
   </ItemGroup>
 
 </Project>
