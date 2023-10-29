@@ -1,15 +1,14 @@
-﻿using EasyMicroservices.WhiteLabelsMicroservice.Database.Entities;
+﻿using EasyMicroservices.Cores.Relational.EntityFrameworkCore;
+using EasyMicroservices.Cores.Relational.EntityFrameworkCore.Intrerfaces;
+using EasyMicroservices.WhiteLabelsMicroservice.Database.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
 {
-    public class WhiteLabelContext : DbContext
+    public class WhiteLabelContext : RelationalCoreContext
     {
-        IDatabaseBuilder _builder;
-        public WhiteLabelContext(IDatabaseBuilder builder)
+        public WhiteLabelContext(IEntityFrameworkCoreDatabaseBuilder builder) : base(builder)
         {
-            _builder = builder;
         }
 
         public DbSet<WhiteLabelEntity> WhiteLabels { get; set; }
@@ -17,12 +16,6 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
         public DbSet<MicroserviceEntity> Microservices { get; set; }
         public DbSet<MicroserviceContextTableEntity> MicroserviceContextTables { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (_builder != null)
-                _builder.OnConfiguring(optionsBuilder);
-            base.OnConfiguring(optionsBuilder);
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -15,10 +15,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EasyMicroservices.Configuration" Version="0.0.0.2" />
-    <PackageReference Include="EasyMicroservices.Cores.Database" Version="0.0.0.37" />
-    <PackageReference Include="EasyMicroservices.Database.EntityFrameworkCore" Version="0.0.0.11" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.11" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+    <PackageReference Include="EasyMicroservices.Cores.AspEntityFrameworkCoreApi" Version="0.0.0.44" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
   </ItemGroup>
   
 </Project>
