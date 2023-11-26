@@ -3,7 +3,7 @@ using EasyMicroservices.Cores.Relational.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace EasyMicroservices.Payments.VirtualServerForTests.TestResources
+namespace EasyMicroservices.WhiteLabelsMicroservice.VirtualServerForTests.TestResources
 {
     public static class WhiteLabelResource
     {
@@ -39,7 +39,12 @@ Content-Type: application/json; charset=utf-8
 Content-Length: 0
 
 {""isSuccess"":true,""result"": 1}");
-            DefaultUniqueIdentityManager defaultUniqueIdentityManager = new DefaultUniqueIdentityManager();
+            DefaultUniqueIdentityManager defaultUniqueIdentityManager = new DefaultUniqueIdentityManager(new Cores.Models.WhiteLabelInfo()
+            {
+                MicroserviceName = microseviceName,
+                MicroserviceId = 1,
+                StartUniqueIdentity = "1-2"
+            });
             List<TestMicroserviceContextTable> microserviceContextTables = new List<TestMicroserviceContextTable>();
             List<TestContextTableContract> contextTables = new List<TestContextTableContract>();
             int id = 1;
@@ -70,7 +75,7 @@ Content-Length: 0
 
 {{""isSuccess"":true,""result"":{Newtonsoft.Json.JsonConvert.SerializeObject(microserviceContextTables)}}}");
 
-            
+
             result.Add(@$"GET /api/ContextTable/GetAll HTTP/1.1
 *RequestSkipBody*"
             ,
