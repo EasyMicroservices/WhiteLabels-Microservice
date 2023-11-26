@@ -2,6 +2,7 @@
 using EasyMicroservices.Laboratory.Engine;
 using EasyMicroservices.Laboratory.Engine.Net;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.VirtualServerForTests
 {
     public class WhiteLabelVirtualTestManager
     {
-        static Dictionary<int, ResourceManager> InitializedPorts = new Dictionary<int, ResourceManager>();
+        static ConcurrentDictionary<int, ResourceManager> InitializedPorts = new ConcurrentDictionary<int, ResourceManager>();
         public int CurrentPortNumber { get; set; }
 
         public async Task<bool> OnInitialize(int portNumber, BaseHandler handler = null)
@@ -18,8 +19,8 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.VirtualServerForTests
             CurrentPortNumber = portNumber;
             if (InitializedPorts.ContainsKey(portNumber))
                 return false;
-            InitializedPorts[portNumber] = new ResourceManager();
-            handler ??= BaseHandler.CreateOSHandler(InitializedPorts[portNumber]);
+            var resource = InitializedPorts[portNumber] = new ResourceManager();
+            handler ??= BaseHandler.CreateOSHandler(resource);
             await handler.Start(portNumber);
             return true;
         }
