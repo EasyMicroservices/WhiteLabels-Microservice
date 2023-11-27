@@ -15,8 +15,8 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
 
         public void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseInMemoryDatabase("Storage database");
-            optionsBuilder.UseSqlServer(_config.GetConnectionString("local"));
+            optionsBuilder.UseInMemoryDatabase("Storage database");
+            //optionsBuilder.UseSqlServer(_config.GetConnectionString("local"));
         }
     }
 }
