@@ -289,6 +289,84 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<ContextTableContractMessageContract> UpdateChangedValuesOnlyAsync(ContextTableContract body)
+        {
+            return UpdateChangedValuesOnlyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<ContextTableContractMessageContract> UpdateChangedValuesOnlyAsync(ContextTableContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/ContextTable/UpdateChangedValuesOnly");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<ContextTableContractMessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<MessageContract> UpdateBulkAsync(ContextTableContractUpdateBulkRequestContract body)
         {
             return UpdateBulkAsync(body, System.Threading.CancellationToken.None);
@@ -301,6 +379,84 @@ namespace WhiteLables.GeneratedServices
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/ContextTable/UpdateBulk");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<MessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<MessageContract> UpdateBulkChangedValuesOnlyAsync(ContextTableContractUpdateBulkRequestContract body)
+        {
+            return UpdateBulkChangedValuesOnlyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<MessageContract> UpdateBulkChangedValuesOnlyAsync(ContextTableContractUpdateBulkRequestContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/ContextTable/UpdateBulkChangedValuesOnly");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1437,6 +1593,84 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<MicroserviceContractMessageContract> UpdateChangedValuesOnlyAsync(MicroserviceContract body)
+        {
+            return UpdateChangedValuesOnlyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<MicroserviceContractMessageContract> UpdateChangedValuesOnlyAsync(MicroserviceContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Microservice/UpdateChangedValuesOnly");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<MicroserviceContractMessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<MessageContract> UpdateBulkAsync(MicroserviceContractUpdateBulkRequestContract body)
         {
             return UpdateBulkAsync(body, System.Threading.CancellationToken.None);
@@ -1449,6 +1683,84 @@ namespace WhiteLables.GeneratedServices
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Microservice/UpdateBulk");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<MessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<MessageContract> UpdateBulkChangedValuesOnlyAsync(MicroserviceContractUpdateBulkRequestContract body)
+        {
+            return UpdateBulkChangedValuesOnlyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<MessageContract> UpdateBulkChangedValuesOnlyAsync(MicroserviceContractUpdateBulkRequestContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/Microservice/UpdateBulkChangedValuesOnly");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -2585,6 +2897,84 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<MicroserviceContextTableContractMessageContract> UpdateChangedValuesOnlyAsync(MicroserviceContextTableContract body)
+        {
+            return UpdateChangedValuesOnlyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<MicroserviceContextTableContractMessageContract> UpdateChangedValuesOnlyAsync(MicroserviceContextTableContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/MicroserviceContextTable/UpdateChangedValuesOnly");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<MicroserviceContextTableContractMessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<MessageContract> UpdateBulkAsync(MicroserviceContextTableContractUpdateBulkRequestContract body)
         {
             return UpdateBulkAsync(body, System.Threading.CancellationToken.None);
@@ -2597,6 +2987,84 @@ namespace WhiteLables.GeneratedServices
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/MicroserviceContextTable/UpdateBulk");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<MessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<MessageContract> UpdateBulkChangedValuesOnlyAsync(MicroserviceContextTableContractUpdateBulkRequestContract body)
+        {
+            return UpdateBulkChangedValuesOnlyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<MessageContract> UpdateBulkChangedValuesOnlyAsync(MicroserviceContextTableContractUpdateBulkRequestContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/MicroserviceContextTable/UpdateBulkChangedValuesOnly");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -3499,6 +3967,84 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<StringMessageContract> GetUniqueIdentityByKeyAsync(GuidGetIdRequestContract body)
+        {
+            return GetUniqueIdentityByKeyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<StringMessageContract> GetUniqueIdentityByKeyAsync(GuidGetIdRequestContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/GetUniqueIdentityByKey");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("POST");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<StringMessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<Int64MessageContract> AddAsync(WhiteLabelContract body)
         {
             return AddAsync(body, System.Threading.CancellationToken.None);
@@ -3733,6 +4279,84 @@ namespace WhiteLables.GeneratedServices
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<WhiteLabelContractMessageContract> UpdateChangedValuesOnlyAsync(WhiteLabelContract body)
+        {
+            return UpdateChangedValuesOnlyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<WhiteLabelContractMessageContract> UpdateChangedValuesOnlyAsync(WhiteLabelContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/UpdateChangedValuesOnly");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<WhiteLabelContractMessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task<MessageContract> UpdateBulkAsync(WhiteLabelContractUpdateBulkRequestContract body)
         {
             return UpdateBulkAsync(body, System.Threading.CancellationToken.None);
@@ -3745,6 +4369,84 @@ namespace WhiteLables.GeneratedServices
         {
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/UpdateBulk");
+
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    var json_ = Newtonsoft.Json.JsonConvert.SerializeObject(body, _settings.Value);
+                    var content_ = new System.Net.Http.StringContent(json_);
+                    content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                    request_.Content = content_;
+                    request_.Method = new System.Net.Http.HttpMethod("PUT");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = System.Linq.Enumerable.ToDictionary(response_.Headers, h_ => h_.Key, h_ => h_.Value);
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<MessageContract>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<MessageContract> UpdateBulkChangedValuesOnlyAsync(WhiteLabelContractUpdateBulkRequestContract body)
+        {
+            return UpdateBulkChangedValuesOnlyAsync(body, System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<MessageContract> UpdateBulkChangedValuesOnlyAsync(WhiteLabelContractUpdateBulkRequestContract body, System.Threading.CancellationToken cancellationToken)
+        {
+            var urlBuilder_ = new System.Text.StringBuilder();
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/api/WhiteLabel/UpdateBulkChangedValuesOnly");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -4610,9 +5312,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#ContextTableContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class ContextTableContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -4620,9 +5319,6 @@ namespace WhiteLables.GeneratedServices
         private string _tableName;
         private string _contextName;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id
         {
@@ -4638,9 +5334,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("tableName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string TableName
         {
@@ -4656,9 +5349,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("contextName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ContextName
         {
@@ -4684,17 +5374,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class ContextTableContractCreateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<ContextTableContract> _items;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ContextTableContract> Items
         {
@@ -4720,9 +5404,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class ContextTableContractListMessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -4730,11 +5411,9 @@ namespace WhiteLables.GeneratedServices
         private ErrorContract _error;
         private SuccessContract _success;
         private System.Collections.Generic.ICollection<ContextTableContract> _result;
+        private long _totalCount;
         private bool _hasItems;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -4780,9 +5459,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("result", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ContextTableContract> Result
         {
@@ -4798,9 +5474,21 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
+        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long TotalCount
+        {
+            get { return _totalCount; }
+
+            set
+            {
+                if (_totalCount != value)
+                {
+                    _totalCount = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         [Newtonsoft.Json.JsonProperty("hasItems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool HasItems
         {
@@ -4826,9 +5514,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class ContextTableContractMessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -4837,9 +5522,6 @@ namespace WhiteLables.GeneratedServices
         private SuccessContract _success;
         private ContextTableContract _result;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -4910,17 +5592,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class ContextTableContractUpdateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<ContextTableContract> _items;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ContextTableContract> Items
         {
@@ -4946,9 +5622,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ErrorContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class ErrorContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -4961,9 +5634,6 @@ namespace WhiteLables.GeneratedServices
         private System.Collections.Generic.ICollection<ErrorContract> _children;
         private ServiceDetailsContract _serviceDetails;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("validations", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ValidationContract> Validations
         {
@@ -4994,9 +5664,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("message", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Message
         {
@@ -5012,9 +5679,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("endUserMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string EndUserMessage
         {
@@ -5030,9 +5694,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("details", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Details
         {
@@ -5048,9 +5709,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("stackTrace", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<string> StackTrace
         {
@@ -5066,9 +5724,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("children", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<ErrorContract> Children
         {
@@ -5109,9 +5764,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#FailedReasonType
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public enum FailedReasonType
     {
@@ -5152,9 +5804,6 @@ namespace WhiteLables.GeneratedServices
 
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#FilterRequestContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class FilterRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -5169,12 +5818,11 @@ namespace WhiteLables.GeneratedServices
         private GetUniqueIdentityType _uniqueIdentityType;
         private long? _index;
         private long? _length;
-        private string _sortColumnName;
+        private string _sortColumnNames;
         private bool _isDescending;
+        private string _text;
+        private string _language;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isDeleted", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool? IsDeleted
         {
@@ -5190,9 +5838,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("fromDeletedDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? FromDeletedDateTime
         {
@@ -5208,9 +5853,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("toDeletedDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? ToDeletedDateTime
         {
@@ -5226,9 +5868,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("fromCreationDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? FromCreationDateTime
         {
@@ -5244,9 +5883,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("toCreationDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? ToCreationDateTime
         {
@@ -5262,9 +5898,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("fromModificationDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? FromModificationDateTime
         {
@@ -5280,9 +5913,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("toModificationDateTime", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.DateTimeOffset? ToModificationDateTime
         {
@@ -5298,9 +5928,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("uniqueIdentity", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string UniqueIdentity
         {
@@ -5331,9 +5958,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("index", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Index
         {
@@ -5349,9 +5973,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("length", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long? Length
         {
@@ -5367,27 +5988,21 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sortColumnName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string SortColumnName
+        [Newtonsoft.Json.JsonProperty("sortColumnNames", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string SortColumnNames
         {
-            get { return _sortColumnName; }
+            get { return _sortColumnNames; }
 
             set
             {
-                if (_sortColumnName != value)
+                if (_sortColumnNames != value)
                 {
-                    _sortColumnName = value;
+                    _sortColumnNames = value;
                     RaisePropertyChanged();
                 }
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isDescending", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsDescending
         {
@@ -5403,6 +6018,36 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
+        [Newtonsoft.Json.JsonProperty("text", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Text
+        {
+            get { return _text; }
+
+            set
+            {
+                if (_text != value)
+                {
+                    _text = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("language", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Language
+        {
+            get { return _language; }
+
+            set
+            {
+                if (_language != value)
+                {
+                    _language = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
@@ -5413,18 +6058,12 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetUniqueIdentityRequestContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class GetUniqueIdentityRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private string _uniqueIdentity;
         private GetUniqueIdentityType _type;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("uniqueIdentity", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string UniqueIdentity
         {
@@ -5465,9 +6104,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.DataTypes#GetUniqueIdentityType
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public enum GetUniqueIdentityType
     {
@@ -5490,17 +6126,41 @@ namespace WhiteLables.GeneratedServices
 
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteBulkRequestContract`1
-    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
+    public partial class GuidGetIdRequestContract : System.ComponentModel.INotifyPropertyChanged
+    {
+        private System.Guid _id;
+
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Guid Id
+        {
+            get { return _id; }
+
+            set
+            {
+                if (_id != value)
+                {
+                    _id = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class Int64DeleteBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<long> _ids;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<long> Ids
         {
@@ -5526,17 +6186,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class Int64DeleteRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private long _id;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id
         {
@@ -5562,17 +6216,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetIdRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class Int64GetIdRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private long _id;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id
         {
@@ -5598,9 +6246,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class Int64MessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -5609,9 +6254,6 @@ namespace WhiteLables.GeneratedServices
         private SuccessContract _success;
         private long _result;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -5657,9 +6299,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("result", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Result
         {
@@ -5685,18 +6324,12 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class Int64SoftDeleteBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<long> _ids;
         private bool _isDelete;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<long> Ids
         {
@@ -5712,9 +6345,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isDelete", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsDelete
         {
@@ -5740,18 +6370,12 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class Int64SoftDeleteRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private long _id;
         private bool _isDelete;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id
         {
@@ -5767,9 +6391,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isDelete", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsDelete
         {
@@ -5795,9 +6416,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -5805,9 +6423,6 @@ namespace WhiteLables.GeneratedServices
         private ErrorContract _error;
         private SuccessContract _success;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -5863,9 +6478,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Responses#MicroserviceContextTableContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -5875,9 +6487,6 @@ namespace WhiteLables.GeneratedServices
         private string _tableName;
         private long _contextTableId;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("microserviceName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MicroserviceName
         {
@@ -5893,9 +6502,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("microserviceId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long MicroserviceId
         {
@@ -5911,9 +6517,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("contextName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ContextName
         {
@@ -5929,9 +6532,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("tableName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string TableName
         {
@@ -5947,9 +6547,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("contextTableId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long ContextTableId
         {
@@ -5975,17 +6572,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractCreateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<MicroserviceContextTableContract> _items;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<MicroserviceContextTableContract> Items
         {
@@ -6011,17 +6602,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractDeleteBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<MicroserviceContextTableContract> _ids;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<MicroserviceContextTableContract> Ids
         {
@@ -6047,9 +6632,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractDeleteRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -6080,9 +6662,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetIdRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractGetIdRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -6113,9 +6692,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractListMessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -6123,11 +6699,9 @@ namespace WhiteLables.GeneratedServices
         private ErrorContract _error;
         private SuccessContract _success;
         private System.Collections.Generic.ICollection<MicroserviceContextTableContract> _result;
+        private long _totalCount;
         private bool _hasItems;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -6173,9 +6747,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("result", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<MicroserviceContextTableContract> Result
         {
@@ -6191,9 +6762,21 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
+        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long TotalCount
+        {
+            get { return _totalCount; }
+
+            set
+            {
+                if (_totalCount != value)
+                {
+                    _totalCount = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         [Newtonsoft.Json.JsonProperty("hasItems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool HasItems
         {
@@ -6219,9 +6802,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractMessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -6230,9 +6810,6 @@ namespace WhiteLables.GeneratedServices
         private SuccessContract _success;
         private MicroserviceContextTableContract _result;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -6303,18 +6880,12 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractSoftDeleteBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<MicroserviceContextTableContract> _ids;
         private bool _isDelete;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("ids", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<MicroserviceContextTableContract> Ids
         {
@@ -6330,9 +6901,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isDelete", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsDelete
         {
@@ -6358,9 +6926,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractSoftDeleteRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -6382,9 +6947,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isDelete", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsDelete
         {
@@ -6410,17 +6972,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContextTableContractUpdateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<MicroserviceContextTableContract> _items;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<MicroserviceContextTableContract> Items
         {
@@ -6446,9 +7002,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#MicroserviceContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -6458,9 +7011,6 @@ namespace WhiteLables.GeneratedServices
         private int _instanceIndex;
         private string _serverDestinationAddress;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id
         {
@@ -6476,9 +7026,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Name
         {
@@ -6494,9 +7041,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Description
         {
@@ -6512,9 +7056,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int32
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("instanceIndex", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int InstanceIndex
         {
@@ -6530,9 +7071,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("serverDestinationAddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string ServerDestinationAddress
         {
@@ -6558,17 +7096,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContractCreateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<MicroserviceContract> _items;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<MicroserviceContract> Items
         {
@@ -6594,9 +7126,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContractListMessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -6604,11 +7133,9 @@ namespace WhiteLables.GeneratedServices
         private ErrorContract _error;
         private SuccessContract _success;
         private System.Collections.Generic.ICollection<MicroserviceContract> _result;
+        private long _totalCount;
         private bool _hasItems;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -6654,9 +7181,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("result", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<MicroserviceContract> Result
         {
@@ -6672,9 +7196,21 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
+        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long TotalCount
+        {
+            get { return _totalCount; }
+
+            set
+            {
+                if (_totalCount != value)
+                {
+                    _totalCount = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         [Newtonsoft.Json.JsonProperty("hasItems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool HasItems
         {
@@ -6700,9 +7236,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContractMessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -6711,9 +7244,6 @@ namespace WhiteLables.GeneratedServices
         private SuccessContract _success;
         private MicroserviceContract _result;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -6784,17 +7314,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class MicroserviceContractUpdateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<MicroserviceContract> _items;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<MicroserviceContract> Items
         {
@@ -6820,38 +7344,29 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ServiceDetailsContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class ServiceDetailsContract : System.ComponentModel.INotifyPropertyChanged
     {
-        private string _servieRouteAddress;
+        private string _serviceRouteAddress;
         private string _methodName;
         private string _path;
-        private string _porjectName;
+        private string _projectName;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("servieRouteAddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string ServieRouteAddress
+        [Newtonsoft.Json.JsonProperty("serviceRouteAddress", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ServiceRouteAddress
         {
-            get { return _servieRouteAddress; }
+            get { return _serviceRouteAddress; }
 
             set
             {
-                if (_servieRouteAddress != value)
+                if (_serviceRouteAddress != value)
                 {
-                    _servieRouteAddress = value;
+                    _serviceRouteAddress = value;
                     RaisePropertyChanged();
                 }
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("methodName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string MethodName
         {
@@ -6867,9 +7382,6 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("path", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public string Path
         {
@@ -6885,19 +7397,16 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("porjectName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string PorjectName
+        [Newtonsoft.Json.JsonProperty("projectName", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string ProjectName
         {
-            get { return _porjectName; }
+            get { return _projectName; }
 
             set
             {
-                if (_porjectName != value)
+                if (_projectName != value)
                 {
-                    _porjectName = value;
+                    _projectName = value;
                     RaisePropertyChanged();
                 }
             }
@@ -6913,222 +7422,14 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#SuccessContract
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
-    public partial class SuccessContract : System.ComponentModel.INotifyPropertyChanged
-    {
-        private string _endUserMessage;
-
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("endUserMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string EndUserMessage
-        {
-            get { return _endUserMessage; }
-
-            set
-            {
-                if (_endUserMessage != value)
-                {
-                    _endUserMessage = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ValidationContract
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
-    public partial class ValidationContract : System.ComponentModel.INotifyPropertyChanged
-    {
-        private string _message;
-
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("message", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Message
-        {
-            get { return _message; }
-
-            set
-            {
-                if (_message != value)
-                {
-                    _message = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /// <summary>
-    /// EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#WhiteLabelContract
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
-    public partial class WhiteLabelContract : System.ComponentModel.INotifyPropertyChanged
-    {
-        private long _id;
-        private string _name;
-        private string _description;
-        private long? _parentId;
-
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long Id
-        {
-            get { return _id; }
-
-            set
-            {
-                if (_id != value)
-                {
-                    _id = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Name
-        {
-            get { return _name; }
-
-            set
-            {
-                if (_name != value)
-                {
-                    _name = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Description
-        {
-            get { return _description; }
-
-            set
-            {
-                if (_description != value)
-                {
-                    _description = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long? ParentId
-        {
-            get { return _parentId; }
-
-            set
-            {
-                if (_parentId != value)
-                {
-                    _parentId = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
-    public partial class WhiteLabelContractCreateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
-    {
-        private System.Collections.Generic.ICollection<WhiteLabelContract> _items;
-
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<WhiteLabelContract> Items
-        {
-            get { return _items; }
-
-            set
-            {
-                if (_items != value)
-                {
-                    _items = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
-    public partial class WhiteLabelContractListMessageContract : System.ComponentModel.INotifyPropertyChanged
+    public partial class StringMessageContract : System.ComponentModel.INotifyPropertyChanged
     {
         private bool _isSuccess;
         private ErrorContract _error;
         private SuccessContract _success;
-        private System.Collections.Generic.ICollection<WhiteLabelContract> _result;
-        private bool _hasItems;
+        private string _result;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -7174,9 +7475,254 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
+        [Newtonsoft.Json.JsonProperty("result", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Result
+        {
+            get { return _result; }
+
+            set
+            {
+                if (_result != value)
+                {
+                    _result = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
+    public partial class SuccessContract : System.ComponentModel.INotifyPropertyChanged
+    {
+        private string _endUserMessage;
+
+        [Newtonsoft.Json.JsonProperty("endUserMessage", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string EndUserMessage
+        {
+            get { return _endUserMessage; }
+
+            set
+            {
+                if (_endUserMessage != value)
+                {
+                    _endUserMessage = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
+    public partial class ValidationContract : System.ComponentModel.INotifyPropertyChanged
+    {
+        private string _message;
+
+        [Newtonsoft.Json.JsonProperty("message", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Message
+        {
+            get { return _message; }
+
+            set
+            {
+                if (_message != value)
+                {
+                    _message = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
+    public partial class WhiteLabelContract : System.ComponentModel.INotifyPropertyChanged
+    {
+        private long _id;
+        private string _name;
+        private string _description;
+        private long? _parentId;
+
+        [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long Id
+        {
+            get { return _id; }
+
+            set
+            {
+                if (_id != value)
+                {
+                    _id = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Name
+        {
+            get { return _name; }
+
+            set
+            {
+                if (_name != value)
+                {
+                    _name = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("description", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public string Description
+        {
+            get { return _description; }
+
+            set
+            {
+                if (_description != value)
+                {
+                    _description = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("parentId", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long? ParentId
+        {
+            get { return _parentId; }
+
+            set
+            {
+                if (_parentId != value)
+                {
+                    _parentId = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
+    public partial class WhiteLabelContractCreateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
+    {
+        private System.Collections.Generic.ICollection<WhiteLabelContract> _items;
+
+        [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Collections.Generic.ICollection<WhiteLabelContract> Items
+        {
+            get { return _items; }
+
+            set
+            {
+                if (_items != value)
+                {
+                    _items = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
+    public partial class WhiteLabelContractListMessageContract : System.ComponentModel.INotifyPropertyChanged
+    {
+        private bool _isSuccess;
+        private ErrorContract _error;
+        private SuccessContract _success;
+        private System.Collections.Generic.ICollection<WhiteLabelContract> _result;
+        private long _totalCount;
+        private bool _hasItems;
+
+        [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public bool IsSuccess
+        {
+            get { return _isSuccess; }
+
+            set
+            {
+                if (_isSuccess != value)
+                {
+                    _isSuccess = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("error", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public ErrorContract Error
+        {
+            get { return _error; }
+
+            set
+            {
+                if (_error != value)
+                {
+                    _error = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("success", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public SuccessContract Success
+        {
+            get { return _success; }
+
+            set
+            {
+                if (_success != value)
+                {
+                    _success = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         [Newtonsoft.Json.JsonProperty("result", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<WhiteLabelContract> Result
         {
@@ -7192,9 +7738,21 @@ namespace WhiteLables.GeneratedServices
             }
         }
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
+        [Newtonsoft.Json.JsonProperty("totalCount", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long TotalCount
+        {
+            get { return _totalCount; }
+
+            set
+            {
+                if (_totalCount != value)
+                {
+                    _totalCount = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         [Newtonsoft.Json.JsonProperty("hasItems", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool HasItems
         {
@@ -7220,9 +7778,6 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class WhiteLabelContractMessageContract : System.ComponentModel.INotifyPropertyChanged
     {
@@ -7231,9 +7786,6 @@ namespace WhiteLables.GeneratedServices
         private SuccessContract _success;
         private WhiteLabelContract _result;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("isSuccess", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool IsSuccess
         {
@@ -7304,17 +7856,11 @@ namespace WhiteLables.GeneratedServices
         }
     }
 
-    /// <summary>
-    /// EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1
-    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.3.0))")]
     public partial class WhiteLabelContractUpdateBulkRequestContract : System.ComponentModel.INotifyPropertyChanged
     {
         private System.Collections.Generic.ICollection<WhiteLabelContract> _items;
 
-        /// <summary>
-        /// System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1
-        /// </summary>
         [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public System.Collections.Generic.ICollection<WhiteLabelContract> Items
         {
