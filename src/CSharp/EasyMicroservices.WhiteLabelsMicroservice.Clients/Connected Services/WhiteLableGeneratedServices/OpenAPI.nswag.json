@@ -152,12 +152,110 @@
         }
       }
     },
+    "/api/ContextTable/UpdateChangedValuesOnly": {
+      "put": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "UpdateChangedValuesOnly",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/ContextTable/UpdateBulk": {
       "put": {
         "tags": [
           "ContextTable"
         ],
         "operationId": "UpdateBulk",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractUpdateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractUpdateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextTableContractUpdateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ContextTable/UpdateBulkChangedValuesOnly": {
+      "put": {
+        "tags": [
+          "ContextTable"
+        ],
+        "operationId": "UpdateBulkChangedValuesOnly",
         "requestBody": {
           "content": {
             "application/json": {
@@ -770,12 +868,110 @@
         }
       }
     },
+    "/api/Microservice/UpdateChangedValuesOnly": {
+      "put": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "UpdateChangedValuesOnly2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Microservice/UpdateBulk": {
       "put": {
         "tags": [
           "Microservice"
         ],
         "operationId": "UpdateBulk2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractUpdateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractUpdateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContractUpdateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Microservice/UpdateBulkChangedValuesOnly": {
+      "put": {
+        "tags": [
+          "Microservice"
+        ],
+        "operationId": "UpdateBulkChangedValuesOnly2",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1388,12 +1584,110 @@
         }
       }
     },
+    "/api/MicroserviceContextTable/UpdateChangedValuesOnly": {
+      "put": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "UpdateChangedValuesOnly3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MicroserviceContextTableContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/MicroserviceContextTable/UpdateBulk": {
       "put": {
         "tags": [
           "MicroserviceContextTable"
         ],
         "operationId": "UpdateBulk3",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractUpdateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractUpdateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MicroserviceContextTableContractUpdateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MicroserviceContextTable/UpdateBulkChangedValuesOnly": {
+      "put": {
+        "tags": [
+          "MicroserviceContextTable"
+        ],
+        "operationId": "UpdateBulkChangedValuesOnly3",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1859,6 +2153,55 @@
         }
       }
     },
+    "/api/WhiteLabel/GetUniqueIdentityByKey": {
+      "post": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "GetUniqueIdentityByKey",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuidGetIdRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuidGetIdRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuidGetIdRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/WhiteLabel/Add": {
       "post": {
         "tags": [
@@ -2006,12 +2349,110 @@
         }
       }
     },
+    "/api/WhiteLabel/UpdateChangedValuesOnly": {
+      "put": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "UpdateChangedValuesOnly4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhiteLabelContractMessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/WhiteLabel/UpdateBulk": {
       "put": {
         "tags": [
           "WhiteLabel"
         ],
         "operationId": "UpdateBulk4",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractUpdateBulkRequestContract"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractUpdateBulkRequestContract"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhiteLabelContractUpdateBulkRequestContract"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageContract"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/WhiteLabel/UpdateBulkChangedValuesOnly": {
+      "put": {
+        "tags": [
+          "WhiteLabel"
+        ],
+        "operationId": "UpdateBulkChangedValuesOnly4",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2482,22 +2923,18 @@
     "schemas": {
       "ContextTableContract": {
         "type": "object",
-        "description": "EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#ContextTableContract",
         "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           },
           "tableName": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "contextName": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           }
         }
@@ -2505,13 +2942,11 @@
       "ContextTableContractCreateBulkRequestContract": {
         "title": "CreateBulkRequestContract<ContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "items": {
             "title": "List<ContextTableContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ContextTableContract"
@@ -2522,12 +2957,10 @@
       "ContextTableContractListMessageContract": {
         "title": "ListMessageContract<ContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -2538,28 +2971,28 @@
           "result": {
             "title": "List<ContextTableContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ContextTableContract"
             }
           },
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
           "hasItems": {
             "type": "boolean",
-            "readOnly": true,
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "readOnly": true
           }
         }
       },
       "ContextTableContractMessageContract": {
         "title": "MessageContract<ContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -2575,13 +3008,11 @@
       "ContextTableContractUpdateBulkRequestContract": {
         "title": "UpdateBulkRequestContract<ContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "items": {
             "title": "List<ContextTableContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ContextTableContract"
@@ -2591,13 +3022,11 @@
       },
       "ErrorContract": {
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ErrorContract",
         "additionalProperties": false,
         "properties": {
           "validations": {
             "title": "List<ValidationContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ValidationContract"
@@ -2608,33 +3037,27 @@
           },
           "message": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "endUserMessage": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "details": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "stackTrace": {
             "title": "List<String>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
-              "type": "string",
-              "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String"
+              "type": "string"
             }
           },
           "children": {
             "title": "List<ErrorContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/ErrorContract"
@@ -2647,7 +3070,6 @@
       },
       "FailedReasonType": {
         "type": "integer",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#FailedReasonType",
         "format": "int32",
         "x-enumNames": [
           "None",
@@ -2690,60 +3112,51 @@
       },
       "FilterRequestContract": {
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#FilterRequestContract",
         "additionalProperties": false,
         "properties": {
           "isDeleted": {
             "title": "Nullable<Boolean>",
             "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "nullable": true
           },
           "fromDeletedDateTime": {
             "title": "Nullable<DateTime>",
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "date-time",
             "nullable": true
           },
           "toDeletedDateTime": {
             "title": "Nullable<DateTime>",
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "date-time",
             "nullable": true
           },
           "fromCreationDateTime": {
             "title": "Nullable<DateTime>",
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "date-time",
             "nullable": true
           },
           "toCreationDateTime": {
             "title": "Nullable<DateTime>",
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "date-time",
             "nullable": true
           },
           "fromModificationDateTime": {
             "title": "Nullable<DateTime>",
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "date-time",
             "nullable": true
           },
           "toModificationDateTime": {
             "title": "Nullable<DateTime>",
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "date-time",
             "nullable": true
           },
           "uniqueIdentity": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "uniqueIdentityType": {
@@ -2752,36 +3165,38 @@
           "index": {
             "title": "Nullable<Int64>",
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "int64",
             "nullable": true
           },
           "length": {
             "title": "Nullable<Int64>",
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "int64",
             "nullable": true
           },
-          "sortColumnName": {
+          "sortColumnNames": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "isDescending": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
+          },
+          "text": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
           }
         }
       },
       "GetUniqueIdentityRequestContract": {
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetUniqueIdentityRequestContract",
         "additionalProperties": false,
         "properties": {
           "uniqueIdentity": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "type": {
@@ -2791,7 +3206,6 @@
       },
       "GetUniqueIdentityType": {
         "type": "integer",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.DataTypes#GetUniqueIdentityType",
         "format": "int32",
         "x-enumNames": [
           "None",
@@ -2814,20 +3228,28 @@
           7
         ]
       },
+      "GuidGetIdRequestContract": {
+        "title": "GetIdRequestContract<Guid>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
       "Int64DeleteBulkRequestContract": {
         "title": "DeleteBulkRequestContract<Int64>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "ids": {
             "title": "List<Int64>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "type": "integer",
-              "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
               "format": "int64"
             }
           }
@@ -2836,12 +3258,10 @@
       "Int64DeleteRequestContract": {
         "title": "DeleteRequestContract<Int64>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           }
         }
@@ -2849,12 +3269,10 @@
       "Int64GetIdRequestContract": {
         "title": "GetIdRequestContract<Int64>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetIdRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           }
         }
@@ -2862,12 +3280,10 @@
       "Int64MessageContract": {
         "title": "MessageContract<Int64>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -2877,7 +3293,6 @@
           },
           "result": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           }
         }
@@ -2885,51 +3300,42 @@
       "Int64SoftDeleteBulkRequestContract": {
         "title": "SoftDeleteBulkRequestContract<Int64>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "ids": {
             "title": "List<Int64>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "type": "integer",
-              "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
               "format": "int64"
             }
           },
           "isDelete": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           }
         }
       },
       "Int64SoftDeleteRequestContract": {
         "title": "SoftDeleteRequestContract<Int64>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           },
           "isDelete": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           }
         }
       },
       "MessageContract": {
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -2941,32 +3347,26 @@
       },
       "MicroserviceContextTableContract": {
         "type": "object",
-        "description": "EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Responses#MicroserviceContextTableContract",
         "additionalProperties": false,
         "properties": {
           "microserviceName": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "microserviceId": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           },
           "contextName": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "tableName": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "contextTableId": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           }
         }
@@ -2974,13 +3374,11 @@
       "MicroserviceContextTableContractCreateBulkRequestContract": {
         "title": "CreateBulkRequestContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "items": {
             "title": "List<MicroserviceContextTableContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/MicroserviceContextTableContract"
@@ -2991,13 +3389,11 @@
       "MicroserviceContextTableContractDeleteBulkRequestContract": {
         "title": "DeleteBulkRequestContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "ids": {
             "title": "List<MicroserviceContextTableContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/MicroserviceContextTableContract"
@@ -3008,7 +3404,6 @@
       "MicroserviceContextTableContractDeleteRequestContract": {
         "title": "DeleteRequestContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#DeleteRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "id": {
@@ -3019,7 +3414,6 @@
       "MicroserviceContextTableContractGetIdRequestContract": {
         "title": "GetIdRequestContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#GetIdRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "id": {
@@ -3030,12 +3424,10 @@
       "MicroserviceContextTableContractListMessageContract": {
         "title": "ListMessageContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -3046,28 +3438,28 @@
           "result": {
             "title": "List<MicroserviceContextTableContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/MicroserviceContextTableContract"
             }
           },
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
           "hasItems": {
             "type": "boolean",
-            "readOnly": true,
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "readOnly": true
           }
         }
       },
       "MicroserviceContextTableContractMessageContract": {
         "title": "MessageContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -3083,49 +3475,42 @@
       "MicroserviceContextTableContractSoftDeleteBulkRequestContract": {
         "title": "SoftDeleteBulkRequestContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "ids": {
             "title": "List<MicroserviceContextTableContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/MicroserviceContextTableContract"
             }
           },
           "isDelete": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           }
         }
       },
       "MicroserviceContextTableContractSoftDeleteRequestContract": {
         "title": "SoftDeleteRequestContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#SoftDeleteRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "id": {
             "$ref": "#/components/schemas/MicroserviceContextTableContract"
           },
           "isDelete": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           }
         }
       },
       "MicroserviceContextTableContractUpdateBulkRequestContract": {
         "title": "UpdateBulkRequestContract<MicroserviceContextTableContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "items": {
             "title": "List<MicroserviceContextTableContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/MicroserviceContextTableContract"
@@ -3135,32 +3520,26 @@
       },
       "MicroserviceContract": {
         "type": "object",
-        "description": "EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#MicroserviceContract",
         "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           },
           "name": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "description": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "instanceIndex": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int32",
             "format": "int32"
           },
           "serverDestinationAddress": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           }
         }
@@ -3168,13 +3547,11 @@
       "MicroserviceContractCreateBulkRequestContract": {
         "title": "CreateBulkRequestContract<MicroserviceContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "items": {
             "title": "List<MicroserviceContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/MicroserviceContract"
@@ -3185,12 +3562,10 @@
       "MicroserviceContractListMessageContract": {
         "title": "ListMessageContract<MicroserviceContract>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -3201,28 +3576,28 @@
           "result": {
             "title": "List<MicroserviceContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/MicroserviceContract"
             }
           },
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
           "hasItems": {
             "type": "boolean",
-            "readOnly": true,
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "readOnly": true
           }
         }
       },
       "MicroserviceContractMessageContract": {
         "title": "MessageContract<MicroserviceContract>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -3238,13 +3613,11 @@
       "MicroserviceContractUpdateBulkRequestContract": {
         "title": "UpdateBulkRequestContract<MicroserviceContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "items": {
             "title": "List<MicroserviceContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/MicroserviceContract"
@@ -3254,79 +3627,85 @@
       },
       "ServiceDetailsContract": {
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ServiceDetailsContract",
         "additionalProperties": false,
         "properties": {
-          "servieRouteAddress": {
+          "serviceRouteAddress": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "methodName": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "path": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
-          "porjectName": {
+          "projectName": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
+            "nullable": true
+          }
+        }
+      },
+      "StringMessageContract": {
+        "title": "MessageContract<String>",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorContract"
+          },
+          "success": {
+            "$ref": "#/components/schemas/SuccessContract"
+          },
+          "result": {
+            "type": "string",
             "nullable": true
           }
         }
       },
       "SuccessContract": {
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#SuccessContract",
         "additionalProperties": false,
         "properties": {
           "endUserMessage": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           }
         }
       },
       "ValidationContract": {
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ValidationContract",
         "additionalProperties": false,
         "properties": {
           "message": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           }
         }
       },
       "WhiteLabelContract": {
         "type": "object",
-        "description": "EasyMicroservices.WhiteLabelsMicroservice.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null#EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common#WhiteLabelContract",
         "additionalProperties": false,
         "properties": {
           "id": {
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Int64",
             "format": "int64"
           },
           "name": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "description": {
             "type": "string",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#String",
             "nullable": true
           },
           "parentId": {
             "title": "Nullable<Int64>",
             "type": "integer",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Nullable`1",
             "format": "int64",
             "nullable": true
           }
@@ -3335,13 +3714,11 @@
       "WhiteLabelContractCreateBulkRequestContract": {
         "title": "CreateBulkRequestContract<WhiteLabelContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#CreateBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "items": {
             "title": "List<WhiteLabelContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/WhiteLabelContract"
@@ -3352,12 +3729,10 @@
       "WhiteLabelContractListMessageContract": {
         "title": "ListMessageContract<WhiteLabelContract>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#ListMessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -3368,28 +3743,28 @@
           "result": {
             "title": "List<WhiteLabelContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/WhiteLabelContract"
             }
           },
+          "totalCount": {
+            "type": "integer",
+            "format": "int64"
+          },
           "hasItems": {
             "type": "boolean",
-            "readOnly": true,
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "readOnly": true
           }
         }
       },
       "WhiteLabelContractMessageContract": {
         "title": "MessageContract<WhiteLabelContract>",
         "type": "object",
-        "description": "EasyMicroservices.ServiceContracts, Version=0.0.0.16, Culture=neutral, PublicKeyToken=null#EasyMicroservices.ServiceContracts#MessageContract`1",
         "additionalProperties": false,
         "properties": {
           "isSuccess": {
-            "type": "boolean",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System#Boolean"
+            "type": "boolean"
           },
           "error": {
             "$ref": "#/components/schemas/ErrorContract"
@@ -3405,13 +3780,11 @@
       "WhiteLabelContractUpdateBulkRequestContract": {
         "title": "UpdateBulkRequestContract<WhiteLabelContract>",
         "type": "object",
-        "description": "EasyMicroservices.Cores.Contracts, Version=0.0.0.14, Culture=neutral, PublicKeyToken=null#EasyMicroservices.Cores.Contracts.Requests#UpdateBulkRequestContract`1",
         "additionalProperties": false,
         "properties": {
           "items": {
             "title": "List<WhiteLabelContract>",
             "type": "array",
-            "description": "System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e#System.Collections.Generic#List`1",
             "nullable": true,
             "items": {
               "$ref": "#/components/schemas/WhiteLabelContract"
@@ -3419,6 +3792,19 @@
           }
         }
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter your token in the text input below.\r\n Example: \"Bearer {token}\"",
+        "name": "Authorization",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ]
 }

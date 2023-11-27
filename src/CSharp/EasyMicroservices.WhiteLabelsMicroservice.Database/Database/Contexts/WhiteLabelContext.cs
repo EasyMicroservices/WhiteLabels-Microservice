@@ -2,6 +2,7 @@
 using EasyMicroservices.Cores.Relational.EntityFrameworkCore.Intrerfaces;
 using EasyMicroservices.WhiteLabelsMicroservice.Database.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
 {
@@ -151,13 +152,15 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
                 new WhiteLabelEntity()
                 {
                     Id = 1,
-                    Name = "ProjectName"
+                    Name = "ProjectName",
+                    Key = Guid.NewGuid(),
                 },
                 new WhiteLabelEntity()
                 {
                     Id = 2,
                     ParentId = 1,
-                    Name = "TenantName"
+                    Name = "TenantName",
+                    Key = Guid.NewGuid(),
                 });
         }
     }
