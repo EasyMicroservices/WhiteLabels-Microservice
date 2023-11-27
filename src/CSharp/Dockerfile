@@ -1,14 +1,14 @@
 # Build Stage
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS Build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS Build
 WORKDIR /source
 COPY . .
-RUN dotnet restore EasyMicroservices.WhiteLabelsMicroservice.sln
-RUN dotnet build EasyMicroservices.WhiteLabelsMicroservice.sln --no-restore
-RUN dotnet test EasyMicroservices.WhiteLabelsMicroservice.sln --no-build --verbosity normal -f net7.0
-RUN dotnet publish EasyMicroservices.WhiteLabelsMicroservice.sln -c release -o /app --no-restore
+RUN dotnet restore EasyMicroservices.WhiteLabelsMicroservice-net6.0.sln
+RUN dotnet build EasyMicroservices.WhiteLabelsMicroservice-net6.0.sln --no-restore
+RUN dotnet test EasyMicroservices.WhiteLabelsMicroservice-net6.0.sln --no-build --verbosity normal -f net6.0
+RUN dotnet publish EasyMicroservices.WhiteLabelsMicroservice-net6.0.sln -c release -o /app --no-restore
 
 # Serve Stage
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS Serve
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS Serve
 WORKDIR /app
 COPY --from=Build /app ./
 
