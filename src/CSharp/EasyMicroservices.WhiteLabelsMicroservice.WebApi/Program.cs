@@ -10,18 +10,19 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
         public static async Task Main(string[] args)
         {
             var app = CreateBuilder(args);
-            var build = await app.Build<WhiteLabelContext>();
+            var build = await app.Build<WhiteLabelContext>(true);
             build.MapControllers();
+            Init(build.Services);
             await build.RunAsync();
         }
 
         static WebApplicationBuilder CreateBuilder(string[] args)
         {
             var app = StartUpExtensions.Create<WhiteLabelContext>(args);
-            app.Services.Builder<WhiteLabelContext>();
-            app.Services.AddTransient<IUnitOfWork>((serviceProvider) => new UnitOfWork(serviceProvider));
+            app.Services.Builder<WhiteLabelContext>().UseDefaultSwaggerOptions();
             app.Services.AddTransient(serviceProvider => new WhiteLabelContext(serviceProvider.GetService<IEntityFrameworkCoreDatabaseBuilder>()));
             app.Services.AddTransient<IEntityFrameworkCoreDatabaseBuilder, DatabaseBuilder>();
+            StartUpExtensions.AddAuthentication("RootAddresses:Authentication");
             return app;
         }
 
@@ -29,10 +30,20 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
         {
             var app = CreateBuilder(args);
             use?.Invoke(app.Services);
-            var build = await app.Build<WhiteLabelContext>();
+            var build = await app.Build<WhiteLabelContext>(true);
             build.MapControllers();
             serviceProvider(build.Services);
+            Init(build.Services);
             await build.RunAsync();
+        }
+
+        static void Init(IServiceProvider serviceProvider)
+        {
+            using (var scope = serviceProvider.CreateScope())
+            {
+                using var uow = scope.ServiceProvider.GetRequiredService<IUnitOfWork>() as UnitOfWork;
+                uow.Initialize("WhiteLabel");
+            }
         }
     }
 }

@@ -1,7 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  
+  <Choose>
+    <When Condition="$(SolutionFileName.Contains('-net'))">
+      <PropertyGroup>
+        <TargetFramework>$(SolutionFileName.Split('-')[1].Replace('.sln',''))</TargetFramework>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>EasyMicroservices.WhiteLabelsMicroservice</RootNamespace>
   </PropertyGroup>
 

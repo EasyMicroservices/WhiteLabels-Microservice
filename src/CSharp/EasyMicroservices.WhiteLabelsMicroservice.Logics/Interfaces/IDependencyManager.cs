@@ -1,5 +1,4 @@
-﻿using EasyMicroservices.Configuration.Interfaces;
-using EasyMicroservices.Database.Interfaces;
+﻿using EasyMicroservices.Database.Interfaces;
 using EasyMicroservices.Mapper.Interfaces;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice.Interfaces
@@ -8,6 +7,5 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Interfaces
     {
         IDatabase GetDatabase();
         IMapperProvider GetMapper();
-        IConfigProvider GetConfigProvider();
     }
 }
