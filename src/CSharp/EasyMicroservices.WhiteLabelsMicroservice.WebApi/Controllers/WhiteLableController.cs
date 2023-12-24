@@ -18,7 +18,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<MessageContract<string>> GetUniqueIdentityByKey(GetIdRequestContract<Guid> request)
+        public async Task<MessageContract<string>> GetUniqueIdentityByKey(GetByIdRequestContract<Guid> request)
         {
             var result = await UnitOfWork.GetLongReadableLogic<WhiteLabelEntity>()
                 .GetBy(x => x.Key == request.Id

@@ -1,22 +1,21 @@
-﻿using EasyMicroservices.Cores.Relational.EntityFrameworkCore.Intrerfaces;
+﻿using EasyMicroservices.Cores.Relational.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice
 {
-    public class DatabaseBuilder : IEntityFrameworkCoreDatabaseBuilder
+    public class DatabaseBuilder : EntityFrameworkCoreDatabaseBuilder
     {
-        public DatabaseBuilder(IConfiguration config)
+        public DatabaseBuilder(IConfiguration configuration) : base(configuration)
         {
-            _config = config;
         }
 
-        readonly IConfiguration _config;
-
-        public void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public override void OnConfiguring(DbContextOptionsBuilder optionsBuilder, string name)
         {
-            optionsBuilder.UseInMemoryDatabase("Storage database");
-            //optionsBuilder.UseSqlServer(_config.GetConnectionString("local"));
+            if (name == "SqlServer")
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("local"));
+            else
+                optionsBuilder.UseInMemoryDatabase("WhiteLabels");
         }
     }
 }
