@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Choose>
     <When Condition="$(SolutionFileName.Contains('-net'))">
@@ -20,6 +20,10 @@
   <ItemGroup>
     <Folder Include="Contracts\Requests\Filters\" />
     <Folder Include="DataTypes\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="EasyMicroservices.Cores.AspEntityFrameworkCoreApi" Version="0.0.0.70" />
   </ItemGroup>
   
 </Project>
