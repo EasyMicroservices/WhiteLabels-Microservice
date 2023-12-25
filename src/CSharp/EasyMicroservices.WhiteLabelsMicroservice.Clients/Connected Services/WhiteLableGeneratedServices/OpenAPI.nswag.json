@@ -505,17 +505,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             }
           }
@@ -554,17 +554,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             }
           }
@@ -682,17 +682,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             }
           }
@@ -1221,17 +1221,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             }
           }
@@ -1270,17 +1270,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             }
           }
@@ -1398,17 +1398,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             }
           }
@@ -1937,17 +1937,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContractGetIdRequestContract"
+                "$ref": "#/components/schemas/MicroserviceContextTableContractGetByIdRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContractGetIdRequestContract"
+                "$ref": "#/components/schemas/MicroserviceContextTableContractGetByIdRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MicroserviceContextTableContractGetIdRequestContract"
+                "$ref": "#/components/schemas/MicroserviceContextTableContractGetByIdRequestContract"
               }
             }
           }
@@ -1986,17 +1986,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             }
           }
@@ -2114,17 +2114,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             }
           }
@@ -2163,17 +2163,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GuidGetIdRequestContract"
+                "$ref": "#/components/schemas/GuidGetByIdRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GuidGetIdRequestContract"
+                "$ref": "#/components/schemas/GuidGetByIdRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GuidGetIdRequestContract"
+                "$ref": "#/components/schemas/GuidGetByIdRequestContract"
               }
             }
           }
@@ -2702,17 +2702,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Int64GetIdRequestContract"
+                "$ref": "#/components/schemas/Int64GetByIdRequestContract"
               }
             }
           }
@@ -2751,17 +2751,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             }
           }
@@ -2879,17 +2879,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GetUniqueIdentityRequestContract"
+                "$ref": "#/components/schemas/GetByUniqueIdentityRequestContract"
               }
             }
           }
@@ -3175,23 +3175,24 @@
             "nullable": true
           },
           "sortColumnNames": {
-            "type": "string",
-            "nullable": true
-          },
-          "isDescending": {
-            "type": "boolean"
+            "title": "List<SortColumnStrategyContract>",
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/SortColumnStrategyContract"
+            }
           },
           "text": {
             "type": "string",
             "nullable": true
           },
-          "language": {
+          "languageShortName": {
             "type": "string",
             "nullable": true
           }
         }
       },
-      "GetUniqueIdentityRequestContract": {
+      "GetByUniqueIdentityRequestContract": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -3228,8 +3229,8 @@
           7
         ]
       },
-      "GuidGetIdRequestContract": {
-        "title": "GetIdRequestContract<Guid>",
+      "GuidGetByIdRequestContract": {
+        "title": "GetByIdRequestContract<Guid>",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -3266,8 +3267,8 @@
           }
         }
       },
-      "Int64GetIdRequestContract": {
-        "title": "GetIdRequestContract<Int64>",
+      "Int64GetByIdRequestContract": {
+        "title": "GetByIdRequestContract<Int64>",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -3411,8 +3412,8 @@
           }
         }
       },
-      "MicroserviceContextTableContractGetIdRequestContract": {
-        "title": "GetIdRequestContract<MicroserviceContextTableContract>",
+      "MicroserviceContextTableContractGetByIdRequestContract": {
+        "title": "GetByIdRequestContract<MicroserviceContextTableContract>",
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -3644,6 +3645,25 @@
           "projectName": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "SortColumnStrategyContract": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "columnName": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDescending": {
+            "title": "Nullable<Boolean>",
+            "type": "boolean",
+            "nullable": true
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
