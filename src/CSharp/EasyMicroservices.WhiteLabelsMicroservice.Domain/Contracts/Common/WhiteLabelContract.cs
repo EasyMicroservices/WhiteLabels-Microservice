@@ -1,4 +1,6 @@
-﻿namespace EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common
+﻿using System;
+
+namespace EasyMicroservices.WhiteLabelsMicroservice.Contracts.Common
 {
     public class WhiteLabelContract
     {
@@ -6,5 +8,6 @@
         public string Name { get; set; }
         public string Description { get; set; }
         public long? ParentId { get; set; }
+        public Guid? Key { get; set; }
     }
 }

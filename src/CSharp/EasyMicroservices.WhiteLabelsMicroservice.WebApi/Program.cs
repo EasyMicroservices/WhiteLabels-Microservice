@@ -19,10 +19,9 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
         static WebApplicationBuilder CreateBuilder(string[] args)
         {
             var app = StartUpExtensions.Create<WhiteLabelContext>(args);
-            app.Services.Builder<WhiteLabelContext>().UseDefaultSwaggerOptions();
+            app.Services.Builder<WhiteLabelContext>("WhiteLabel").UseDefaultSwaggerOptions();
             app.Services.AddTransient(serviceProvider => new WhiteLabelContext(serviceProvider.GetService<IEntityFrameworkCoreDatabaseBuilder>()));
             app.Services.AddTransient<IEntityFrameworkCoreDatabaseBuilder, DatabaseBuilder>();
-            StartUpExtensions.AddAuthentication("RootAddresses:Authentication");
             return app;
         }
 
