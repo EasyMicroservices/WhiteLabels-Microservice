@@ -7613,6 +7613,7 @@ namespace WhiteLables.GeneratedServices
         private string _name;
         private string _description;
         private long? _parentId;
+        private System.Guid? _key;
 
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public long Id
@@ -7669,6 +7670,21 @@ namespace WhiteLables.GeneratedServices
                 if (_parentId != value)
                 {
                     _parentId = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        [Newtonsoft.Json.JsonProperty("key", Required = Newtonsoft.Json.Required.Default, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public System.Guid? Key
+        {
+            get { return _key; }
+
+            set
+            {
+                if (_key != value)
+                {
+                    _key = value;
                     RaisePropertyChanged();
                 }
             }

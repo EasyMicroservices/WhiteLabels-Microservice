@@ -3728,6 +3728,12 @@
             "type": "integer",
             "format": "int64",
             "nullable": true
+          },
+          "key": {
+            "title": "Nullable<Guid>",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
           }
         }
       },

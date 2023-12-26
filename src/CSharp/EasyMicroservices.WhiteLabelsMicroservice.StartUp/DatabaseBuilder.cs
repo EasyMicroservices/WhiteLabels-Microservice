@@ -1,6 +1,8 @@
 ﻿using EasyMicroservices.Cores.Relational.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice
 {
@@ -8,13 +10,15 @@ namespace EasyMicroservices.WhiteLabelsMicroservice
     {
         public DatabaseBuilder(IConfiguration configuration) : base(configuration)
         {
+
         }
 
-        public override void OnConfiguring(DbContextOptionsBuilder optionsBuilder, string name)
+        public override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (name == "SqlServer")
-                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("local"));
-            else
+            var entity = GetEntity();
+            if (entity.IsSqlServer())
+                optionsBuilder.UseSqlServer(entity.ConnectionString);
+            else if (entity.IsInMemory())
                 optionsBuilder.UseInMemoryDatabase("WhiteLabels");
         }
     }
