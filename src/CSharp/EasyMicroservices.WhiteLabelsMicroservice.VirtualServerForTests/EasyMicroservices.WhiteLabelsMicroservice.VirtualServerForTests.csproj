@@ -28,7 +28,7 @@
   <ItemGroup>
     <PackageReference Include="EasyMicroservices.Laboratory" Version="0.0.0.15" />
     <PackageReference Include="EasyMicroservices.Cores.AspEntityFrameworkCoreApi">
-      <Version>0.0.0.54</Version>
+      <Version>0.0.0.79</Version>
     </PackageReference>
   </ItemGroup>
   
