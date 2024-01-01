@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Schemas
 {
@@ -10,5 +6,6 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Schemas
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public Guid? Key { get; set; }
     }
 }

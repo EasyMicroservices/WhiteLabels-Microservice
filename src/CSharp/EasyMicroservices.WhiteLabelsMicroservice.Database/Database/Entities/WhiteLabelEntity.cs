@@ -9,7 +9,6 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Entities
     {
         public long Id { get; set; }
 
-        public Guid? Key { get; set; }
         public long? ParentId { get; set; }
         public WhiteLabelEntity Parent { get; set; }
         public ICollection<WhiteLabelEntity> Children { get; set; }
