@@ -10,7 +10,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.WebApi
         public static async Task Main(string[] args)
         {
             var app = CreateBuilder(args);
-            var build = await app.Build<WhiteLabelContext>(true);
+            var build = await app.BuildWithUseCors<WhiteLabelContext>(default, true);
             build.MapControllers();
             Init(build.Services);
             await build.RunAsync();
