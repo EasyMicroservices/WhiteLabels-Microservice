@@ -160,7 +160,7 @@ namespace EasyMicroservices.WhiteLabelsMicroservice.Database.Contexts
                     Id = 2,
                     ParentId = 1,
                     Name = "TenantName",
-                    Key = Guid.NewGuid(),
+                    Key = Guid.Parse("df0f728f-4545-480c-8f0f-3de063280e98"),
                 });
         }
     }
